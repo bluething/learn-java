@@ -197,3 +197,8 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,intellij,java,java-web,gradle
+
+effectivejava/.idea/compiler.xml
+effectivejava/.idea/jarRepositories.xml
+java8inaction/.idea/compiler.xml
+java8inaction/.idea/jarRepositories.xml
