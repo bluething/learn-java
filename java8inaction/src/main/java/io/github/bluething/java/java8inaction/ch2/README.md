@@ -1,0 +1,3 @@
+Challenge in software engineering is user requirement always change. We as a software engineer must minimize the effort to meet these changes. Behavior parameterization is a software development pattern that lets you handle frequent requirement changes.Briefly we take a block of code and make them available without executing it. For instance, you could pass the block of code as an argument to another method that will execute it later. As a result, the method’s behavior is parameterized based on that block of code.
+
+Behavior parameterization means: the ability to tell a method to take multiple behaviors (or strategies) as parameters and use them internally to accomplish different behaviors.
