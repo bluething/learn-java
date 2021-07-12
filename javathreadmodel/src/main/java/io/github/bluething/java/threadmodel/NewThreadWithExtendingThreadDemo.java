@@ -2,6 +2,13 @@ package io.github.bluething.java.threadmodel;
 
 public class NewThreadWithExtendingThreadDemo {
 
+    public static void main(String[] args) {
+        NewThreadWithExtendingThread newThreadWithExtendingThread = new NewThreadWithExtendingThread();
+        newThreadWithExtendingThread.start();
+
+        
+    }
+
     static class NewThreadWithExtendingThread extends Thread {
 
         NewThreadWithExtendingThread() {
