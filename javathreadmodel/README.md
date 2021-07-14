@@ -70,3 +70,23 @@ What if we have multiple thread start at the same time? All those threads share 
 What if we want our main thread to finish last? We can use [`sleep()`](https://github.com/bluething/learnjava/blob/main/javathreadmodel/src/main/java/io/github/bluething/java/threadmodel/MultipleThreadDemo.java) with enough time. The question is how long enough main thread should wait?  
 How can one thread know when another thread has ended? Using `isAlive()`.
 Or we can use [`join()`](https://github.com/bluething/learnjava/blob/main/javathreadmodel/src/main/java/io/github/bluething/java/threadmodel/MultipleThreadWithJoinDemo.java). This method waits until the thread on which it is called terminates.
+
+#### Thread priorities
+
+In theory, over a given period of time, higher-priority threads get more CPU time than lower-priority threads.  
+In practice, the amount of CPU time that a thread gets often depends on several factors besides its priority.  
+A higher-priority thread can also preempt a lower-priority one.
+
+In theory, threads of equal priority should get equal access to the CPU. Java by design can run in multiple environment. Those environments implement multitasking fundamentally differently than others.  
+For safety, threads that share the same priority should yield control once in a while.
+
+#### Synchronization
+
+Key to synchronization is the concept of the monitor, using `synchronized` keyword.  
+A monitor is an object that is used as a mutually exclusive lock. All objects have their own implicit monitor associated with them.  
+Only one thread can own a monitor at a given time. When a thread acquires a lock, it is said to have entered the monitor.  
+All other threads attempting to enter the locked monitor will be suspended until the first thread exits the monitor. These other threads are said to be waiting for the monitor.  
+A thread that owns a monitor can reenter the same monitor if it so desires.  
+Use the `synchronized` keyword to guard the state from race conditions.
+
+What if the class not designed to multithreaded purpose? Use synchronized statement.
