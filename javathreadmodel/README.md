@@ -90,3 +90,12 @@ A thread that owns a monitor can reenter the same monitor if it so desires.
 Use the `synchronized` keyword to guard the state from race conditions.
 
 What if the class not designed to multithreaded purpose? Use synchronized statement.
+
+#### Interthread communication
+
+One benefit of thread is they do away with polling.  
+Polling is usually implemented by a loop that is used to check some condition repeatedly. Once the condition is true, appropriate action is taken. This wastes CPU time.  
+To avoid polling, Java includes an elegant interprocess communication mechanism via the `wait()`, `notify()`, and `notifyAll()` methods.
+
+`wait()` normally waits until `notify()` or `notifyAll()` is called, there is a possibility that in very rare cases the waiting thread could be awakened due to a spurious wakeup. In this case, a waiting thread resumes without `notify()` or `notifyAll()` having been called.  
+Because of this remote possibility, the Java API documentation recommends that calls to wait( ) should take place within a loop that checks the condition on which the thread is waiting. 
