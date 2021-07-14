@@ -98,4 +98,11 @@ Polling is usually implemented by a loop that is used to check some condition re
 To avoid polling, Java includes an elegant interprocess communication mechanism via the `wait()`, `notify()`, and `notifyAll()` methods.
 
 `wait()` normally waits until `notify()` or `notifyAll()` is called, there is a possibility that in very rare cases the waiting thread could be awakened due to a spurious wakeup. In this case, a waiting thread resumes without `notify()` or `notifyAll()` having been called.  
-Because of this remote possibility, the Java API documentation recommends that calls to wait( ) should take place within a loop that checks the condition on which the thread is waiting. 
+Because of this remote possibility, the Java API documentation recommends that calls to wait( ) should take place within a loop that checks the condition on which the thread is waiting.
+
+#### Deadlock
+
+Deadlock occurs when two threads have a circular dependency on a pair of synchronized objects.  
+Deadlock is a difficult error to debug for two reasons:  
+1. In general, it occurs only rarely, when the two threads time-slice in just the right way.  
+2. It may involve more than two threads and two synchronized objects. (That is, deadlock can occur through a more convoluted sequence of events than just described.)
