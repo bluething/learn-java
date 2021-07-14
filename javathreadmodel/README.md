@@ -62,3 +62,11 @@ The extending class must override the `run()` method, which is the entry point f
 
 I prefer to implement Runnable interface. By implementing Runnable, your thread class does not need to inherit Thread, making it free to inherit a different class.  
 Classes should be extended only when they are being enhanced or adapted in some way.
+
+###### Multiple thread?
+
+What if we have multiple thread start at the same time? All those threads share the CPU.
+
+What if we want our main thread to finish last? We can use [`sleep()`](https://github.com/bluething/learnjava/blob/main/javathreadmodel/src/main/java/io/github/bluething/java/threadmodel/MultipleThreadDemo.java) with enough time. The question is how long enough main thread should wait?  
+How can one thread know when another thread has ended? Using `isAlive()`.
+Or we can use [`join()`](https://github.com/bluething/learnjava/blob/main/javathreadmodel/src/main/java/io/github/bluething/java/threadmodel/MultipleThreadWithJoinDemo.java). This method waits until the thread on which it is called terminates.
