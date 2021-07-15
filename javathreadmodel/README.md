@@ -106,3 +106,19 @@ Deadlock occurs when two threads have a circular dependency on a pair of synchro
 Deadlock is a difficult error to debug for two reasons:  
 1. In general, it occurs only rarely, when the two threads time-slice in just the right way.  
 2. It may involve more than two threads and two synchronized objects. (That is, deadlock can occur through a more convoluted sequence of events than just described.)
+
+#### Thread state
+
+![thread state](https://github.com/bluething/learnjava/blob/main/images/threadstate.jpg?raw=true)
+
+| State name | Description |
+| --- | --- |
+| NEW | A thread that has not yet started is in this state. |
+| RUNNABLE | A thread executing in the Java virtual machine is in this state. |
+| BLOCKED | A thread that is blocked waiting for a monitor lock is in this state. |
+| WAITING | A thread that is waiting indefinitely for another thread to perform a particular action is in this state. |
+| TIMED_WAITING | A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state. |
+| TERMINATED | A thread that has exited is in this state. |
+
+We can use `getState()` to obtain the state of a thread.  
+It is important to understand that a thread’s state may change after the call to `getState()`. Thus, depending on the circumstances, the state obtained by calling `getState()` may not reflect the actual state of the thread only a moment later. For this (and other) reasons, `getState()` is not intended to provide a means of synchronizing threads. It’s primarily used for debugging or for profiling a thread’s run-time characteristics.
