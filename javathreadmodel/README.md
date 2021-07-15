@@ -63,6 +63,21 @@ The extending class must override the `run()` method, which is the entry point f
 I prefer to implement Runnable interface. By implementing Runnable, your thread class does not need to inherit Thread, making it free to inherit a different class.  
 Classes should be extended only when they are being enhanced or adapted in some way.
 
+###### How to start and create thread at the same time
+
+Using a factory method  
+```java
+    public static NewThreadCreateAndStart createAndStart() {
+        NewThreadCreateAndStart newThreadCreateAndStart = new NewThreadCreateAndStart();
+        newThreadCreateAndStart.thread.start();
+        return newThreadCreateAndStart;
+    }
+```  
+If we don't need to keep a reference to the executing thread  
+```java
+new NewThreadCreateAndStart().thread.start();
+```
+
 ###### Multiple thread?
 
 What if we have multiple thread start at the same time? All those threads share the CPU.
