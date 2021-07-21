@@ -53,3 +53,26 @@ Other tools
 1. jvisualvm  
 2. mat
 
+#### Analysis process
+
+The first-pass analysis of a heap is recognized retained memory.  
+The retained memory of an object is the amount of memory that would be freed if the object itself were eligible to be collected.
+
+Two other useful terms for memory analysis are shallow and deep.  
+- The shallow size of an object is the size of the object itself.  
+- The deep size of an object includes the size of the object it references.
+
+Objects that retain a large amount of heap space are often called the _dominators_ of the heap. 
+What we need to do if we found dominators in our dump file?  
+- Try to reduce the number of them.  
+- Retain them for a shorter period of time.  
+- Simplify their object graph.  
+- Make them smaller.
+
+Looking at the objects that directly retain the largest amount of memory isn’t going to solve the memory issues. This is because of shared object.
+
+The next step is use histogram, the histogram aggregates objects of the same type.
+
+Heap analysis tools provide a way to find the GC roots of a particular object (or set of objects in this case). The GC roots are the system objects that hold a static, global reference that (through a long chain of other objects) refers to the object in question.  
+The references here are a tree structure in reverse.  
+Find the lowest point in the object graph where the target object is shared. This is done by examining the objects and their incoming references and tracing those incoming references until the duplicate path is identified.
