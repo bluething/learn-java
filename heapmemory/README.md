@@ -146,9 +146,16 @@ This error is thrown when _**all**_ of the following conditions are met:
 
 ### Reference
 
+Scott Oaks. 2020. Java Performance (2nd. ed.). O'Reilly Media, Inc.
+
+### Read more
+
+[HotSpot Virtual Machine Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/)  
+[Handling memory leaks in Java programs](https://developer.ibm.com/articles/j-leaks/)  
 [understanding java native memory](http://www.trevorsimonton.com/blog/2020/09/09/java-native-memory.html)  
 [Native Memory — The Silent JVM Killer](https://medium.com/swlh/native-memory-the-silent-jvm-killer-595913cba8e7)  
 [Native Memory Tracking in JVM](https://www.baeldung.com/native-memory-tracking-in-jvm)  
 [Metaspace](https://wiki.openjdk.java.net/display/HotSpot/Metaspace)  
 [What is Metaspace?](https://stuefe.de/posts/metaspace/what-is-metaspace/)  
-[MetaSpace in Java 8 with Examples](https://www.geeksforgeeks.org/metaspace-in-java-8-with-examples/)
+[MetaSpace in Java 8 with Examples](https://www.geeksforgeeks.org/metaspace-in-java-8-with-examples/)  
+[OutOfMemoryError: GC Overhead Limit Exceeded](https://www.baeldung.com/java-gc-overhead-limit-exceeded)
