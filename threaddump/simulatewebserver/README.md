@@ -1,0 +1,1 @@
+Rewrite from [threaddump](https://github.com/thombergs/code-examples/tree/master/core-java/threaddump) by [pratikdas](https://github.com/thombergs/code-examples/commits?author=pratikdas)
