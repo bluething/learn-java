@@ -1,0 +1,28 @@
+# Credit to Uriah Levy (https://github.com/uriahl)
+# Place this file or copy and paste its content into your ~/.functions file,
+# and source this file on your terminal to be able to utilize these functions ('source ~/.functions')
+
+# Helper functions for capturing thread dumps.
+
+# Given a pattern, prints the PID of a process by grepping on the output of 'ps'
+pidFromGrep() {
+	grep_arg=$1
+	grep_arg_length=${#grep_arg}
+	first_grep_arg_letter=${grep_arg:0:1}
+	rest_of_grep_arg=$(echo $grep_arg| tail -c $grep_arg_length)
+	modified_grep_arg="[$first_grep_arg_letter]$rest_of_grep_arg"
+	pid=$(ps aux| grep $modified_grep_arg| awk '{print $2}')
+	echo $pid
+}
+
+# Given a pattern, captures a single thread dump for a process with a PID extracted using the pidFromGrep() function
+threadDump() {
+	pid=$(pidFromGrep $1)
+	kill -3 $pid
+}
+
+# Given a pattern, tails the STDOUT of a PID extracted using the pidFromGrep() function
+stdoutOf() {
+    pid=$(pidFromGrep $1)
+    sudo tail -f /proc/$pid/fd/1
+}
