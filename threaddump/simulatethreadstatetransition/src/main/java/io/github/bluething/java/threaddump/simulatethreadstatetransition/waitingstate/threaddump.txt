@@ -1,0 +1,259 @@
+2021-07-27 17:19:26
+Full thread dump OpenJDK 64-Bit Server VM (13.0.7+5-MTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f25d8001f60, length=20, elements={
+0x00007f261c02b000, 0x00007f261c182800, 0x00007f261c184800, 0x00007f261c18a800,
+0x00007f261c18c800, 0x00007f261c18e800, 0x00007f261c190800, 0x00007f261c192800,
+0x00007f261c1e7800, 0x00007f261d2ab800, 0x00007f261d2c2000, 0x00007f261d33e800,
+0x00007f258c21b800, 0x00007f258c16e000, 0x00007f258c17f000, 0x00007f258cdfe800,
+0x00007f25a1200800, 0x00007f25a1880800, 0x00007f25380fd800, 0x00007f25d8001000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=656,20ms elapsed=944,84s tid=0x00007f261c02b000 nid=0x8372 waiting on condition  [0x00007f2621c86000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e07bcec8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.awaitStop(DaemonStateCoordinator.java:95)
+	at org.gradle.launcher.daemon.server.Daemon.awaitExpiration(Daemon.java:247)
+	at org.gradle.launcher.daemon.server.Daemon.stopOnExpiration(Daemon.java:221)
+	at org.gradle.launcher.daemon.bootstrap.DaemonMain.doAction(DaemonMain.java:134)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:45)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(java.base@13.0.7/Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(java.base@13.0.7/NativeMethodAccessorImpl.java:62)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(java.base@13.0.7/DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(java.base@13.0.7/Method.java:567)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:60)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:37)
+	at org.gradle.launcher.daemon.bootstrap.GradleDaemon.main(GradleDaemon.java:22)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=2,84ms elapsed=944,83s tid=0x00007f261c182800 nid=0x8379 waiting on condition  [0x00007f26005f8000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@13.0.7/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@13.0.7/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@13.0.7/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,26ms elapsed=944,83s tid=0x00007f261c184800 nid=0x837a in Object.wait()  [0x00007f26004f7000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@13.0.7/Native Method)
+	- waiting on <0x00000000e07bde58> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@13.0.7/ReferenceQueue.java:155)
+	- locked <0x00000000e07bde58> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@13.0.7/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@13.0.7/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,88ms elapsed=944,83s tid=0x00007f261c18a800 nid=0x837b runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=11,35ms elapsed=944,83s tid=0x00007f261c18c800 nid=0x837c runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=5855,01ms elapsed=944,83s tid=0x00007f261c18e800 nid=0x837d waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=2695,28ms elapsed=944,83s tid=0x00007f261c190800 nid=0x837e waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=118,60ms elapsed=944,83s tid=0x00007f261c192800 nid=0x837f runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #11 daemon prio=8 os_prio=0 cpu=3,25ms elapsed=944,81s tid=0x00007f261c1e7800 nid=0x8380 in Object.wait()  [0x00007f25e388b000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@13.0.7/Native Method)
+	- waiting on <no object reference available>
+	at java.lang.ref.ReferenceQueue.remove(java.base@13.0.7/ReferenceQueue.java:155)
+	- locked <0x00000000e07be460> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@13.0.7/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+	at jdk.internal.misc.InnocuousThread.run(java.base@13.0.7/InnocuousThread.java:134)
+
+"Daemon health stats" #14 prio=5 os_prio=0 cpu=369,90ms elapsed=944,25s tid=0x00007f261d2ab800 nid=0x8389 waiting on condition  [0x00007f25e2541000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e07be620> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.7/LockSupport.java:235)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.7/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@13.0.7/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Incoming local TCP Connector on port 43873" #16 prio=5 os_prio=0 cpu=13,71ms elapsed=944,15s tid=0x00007f261d2c2000 nid=0x838a runnable  [0x00007f25e223d000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.Net.accept(java.base@13.0.7/Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(java.base@13.0.7/ServerSocketChannelImpl.java:276)
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.run(TcpIncomingConnector.java:108)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Daemon periodic checks" #17 prio=5 os_prio=0 cpu=389,13ms elapsed=944,13s tid=0x00007f261d33e800 nid=0x838b waiting on condition  [0x00007f25e213c000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e07c00e0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.7/LockSupport.java:235)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.7/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@13.0.7/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Cache worker for journal cache (/home/habibali/.gradle/caches/journal-1)" #25 prio=5 os_prio=0 cpu=13,55ms elapsed=943,88s tid=0x00007f258c21b800 nid=0x8396 waiting on condition  [0x00007f25e1534000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e00e5508> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ArrayBlockingQueue.take(java.base@13.0.7/ArrayBlockingQueue.java:417)
+	at org.gradle.cache.internal.CacheAccessWorker.takeFromQueue(CacheAccessWorker.java:169)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:133)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"File lock request listener" #26 prio=5 os_prio=0 cpu=2,76ms elapsed=943,87s tid=0x00007f258c16e000 nid=0x8397 runnable  [0x00007f25e1433000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.PlainDatagramSocketImpl.receive0(java.base@13.0.7/Native Method)
+	- locked <0x00000000e00f4bf8> (a java.net.PlainDatagramSocketImpl)
+	at java.net.AbstractPlainDatagramSocketImpl.receive(java.base@13.0.7/AbstractPlainDatagramSocketImpl.java:182)
+	- locked <0x00000000e00f4bf8> (a java.net.PlainDatagramSocketImpl)
+	at java.net.DatagramSocket.receive(java.base@13.0.7/DatagramSocket.java:815)
+	- locked <0x00000000ec8337a0> (a java.net.DatagramPacket)
+	- locked <0x00000000e00fc918> (a java.net.DatagramSocket)
+	at org.gradle.cache.internal.locklistener.FileLockCommunicator.receive(FileLockCommunicator.java:86)
+	at org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler$1.doRun(DefaultFileLockContentionHandler.java:119)
+	at org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler$1.run(DefaultFileLockContentionHandler.java:105)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Cache worker for file hash cache (/home/habibali/.gradle/caches/6.3/fileHashes)" #27 prio=5 os_prio=0 cpu=16,87ms elapsed=943,86s tid=0x00007f258c17f000 nid=0x8399 waiting on condition  [0x00007f25e1332000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e0d0c418> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ArrayBlockingQueue.take(java.base@13.0.7/ArrayBlockingQueue.java:417)
+	at org.gradle.cache.internal.CacheAccessWorker.takeFromQueue(CacheAccessWorker.java:169)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:133)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Cache worker for execution history cache (/home/habibali/.gradle/caches/6.3/executionHistory)" #32 prio=5 os_prio=0 cpu=0,13ms elapsed=943,17s tid=0x00007f258cdfe800 nid=0x83a1 waiting on condition  [0x00007f25e04c7000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000e1db12e0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ArrayBlockingQueue.take(java.base@13.0.7/ArrayBlockingQueue.java:417)
+	at org.gradle.cache.internal.CacheAccessWorker.takeFromQueue(CacheAccessWorker.java:169)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:133)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Memory manager" #53 prio=5 os_prio=0 cpu=50,70ms elapsed=302,37s tid=0x00007f25a1200800 nid=0x8676 waiting on condition  [0x00007f254e6c6000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000ed750db0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@13.0.7/LockSupport.java:235)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@13.0.7/AbstractQueuedSynchronizer.java:2123)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@13.0.7/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@13.0.7/ThreadPoolExecutor.java:1054)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1114)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Cache worker for file content cache (/home/habibali/.gradle/caches/6.3/fileContent)" #54 prio=5 os_prio=0 cpu=0,12ms elapsed=302,36s tid=0x00007f25a1880800 nid=0x8677 waiting on condition  [0x00007f254e8c8000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000ed600638> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ArrayBlockingQueue.take(java.base@13.0.7/ArrayBlockingQueue.java:417)
+	at org.gradle.cache.internal.CacheAccessWorker.takeFromQueue(CacheAccessWorker.java:169)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:133)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Cache worker for Java compile cache (/home/habibali/.gradle/caches/6.3/javaCompile)" #64 prio=5 os_prio=0 cpu=0,14ms elapsed=302,23s tid=0x00007f25380fd800 nid=0x8681 waiting on condition  [0x00007f254d9c1000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@13.0.7/Native Method)
+	- parking to wait for  <0x00000000ed64f450> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@13.0.7/LockSupport.java:194)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@13.0.7/AbstractQueuedSynchronizer.java:2081)
+	at java.util.concurrent.ArrayBlockingQueue.take(java.base@13.0.7/ArrayBlockingQueue.java:417)
+	at org.gradle.cache.internal.CacheAccessWorker.takeFromQueue(CacheAccessWorker.java:169)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:133)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@13.0.7/ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@13.0.7/ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(java.base@13.0.7/Thread.java:830)
+
+"Attach Listener" #107 daemon prio=9 os_prio=0 cpu=0,51ms elapsed=0,10s tid=0x00007f25d8001000 nid=0x89a7 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"VM Thread" os_prio=0 cpu=128,27ms elapsed=944,83s tid=0x00007f261c17f800 nid=0x8378 runnable
+
+"GC Thread#0" os_prio=0 cpu=74,84ms elapsed=944,84s tid=0x00007f261c051000 nid=0x8373 runnable
+
+"GC Thread#1" os_prio=0 cpu=73,37ms elapsed=944,47s tid=0x00007f25e4001000 nid=0x8383 runnable
+
+"GC Thread#2" os_prio=0 cpu=69,34ms elapsed=944,47s tid=0x00007f25e4002800 nid=0x8384 runnable
+
+"GC Thread#3" os_prio=0 cpu=58,04ms elapsed=944,47s tid=0x00007f25e4004000 nid=0x8385 runnable
+
+"GC Thread#4" os_prio=0 cpu=73,61ms elapsed=944,47s tid=0x00007f25e4006000 nid=0x8386 runnable
+
+"GC Thread#5" os_prio=0 cpu=68,79ms elapsed=944,47s tid=0x00007f25e4007800 nid=0x8387 runnable
+
+"GC Thread#6" os_prio=0 cpu=64,04ms elapsed=943,31s tid=0x00007f25e400a800 nid=0x839c runnable
+
+"GC Thread#7" os_prio=0 cpu=50,83ms elapsed=943,31s tid=0x00007f25e400c000 nid=0x839d runnable
+
+"G1 Main Marker" os_prio=0 cpu=1,39ms elapsed=944,84s tid=0x00007f261c057800 nid=0x8374 runnable
+
+"G1 Conc#0" os_prio=0 cpu=72,48ms elapsed=944,84s tid=0x00007f261c059000 nid=0x8375 runnable
+
+"G1 Conc#1" os_prio=0 cpu=73,26ms elapsed=943,18s tid=0x00007f25f4001000 nid=0x83a0 runnable
+
+"G1 Refine#0" os_prio=0 cpu=33,63ms elapsed=944,84s tid=0x00007f261c144800 nid=0x8376 runnable
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=467,43ms elapsed=944,84s tid=0x00007f261c146800 nid=0x8377 runnable
+"VM Periodic Task Thread" os_prio=0 cpu=857,44ms elapsed=944,81s tid=0x00007f261c1eb800 nid=0x8381 waiting on condition
+
+JNI global refs: 24, weak refs: 0
