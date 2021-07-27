@@ -129,6 +129,97 @@ Heap
   class space    used 7K, capacity 386K, committed 512K, reserved 1048576K
 ```
 
+#### The structure of a thread dump
+
+##### JVM Threads
+
+Some of like this:
+```text
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,22ms elapsed=22,55s tid=0x00007f76041fe000 nid=0x610d waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,03ms elapsed=22,55s tid=0x00007f7604200000 nid=0x610e runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=5,42ms elapsed=22,55s tid=0x00007f7604202000 nid=0x610f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+```
+
+##### Application threads
+
+Many of like this:
+```text
+"main" #1 prio=5 os_prio=0 cpu=28,46ms elapsed=22,56s tid=0x00007f7604029000 nid=0x6104 waiting on condition  [0x00007f7608e9a000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(java.base@14.0.1/Native Method)
+	at io.github.bluething.java.threaddump.simulatelongpausethread.App.sleep(App.java:12)
+	at io.github.bluething.java.threaddump.simulatelongpausethread.App.main(App.java:7)
+```
+
+The first line of each thread represents the thread summary, which contains the following items:
+
+Section | Example value | Description |  
+--- | --- | --- |
+Name | `main` | Human-readable name of the thread.  
+Id | `#1` | A unique ID associated with each Thread object. This number is generated, starting at 1, for all threads in the system. Each time a Thread object is created, the sequence number is incremented and then assigned to the newly created Thread.  
+Daemon status | `daemon` | A tag denoting if the thread is a daemon thread. If the thread is a daemon, this tag will be present; if the thread is a non-daemon thread, no tag will be present.  
+Thread Priority | `prio=5` | The numeric priority of the Java thread. Note that this does not necessarily correspond to the priority of the OS thread to with the Java thread is dispatched. Usually highly platform-dependent.
+OS Thread priority | `os_prio=0` | The OS thread priority. This priority can differ from the Java thread priority and corresponds to the OS thread on which the Java thread is dispatched.  
+Thread address | `tid=0x00007f7604029000` | The address of the Java thread. This address represents the pointer address of the Java Native Interface (JNI) native Thread object (the C++ Thread object that backs the Java thread through the JNI).  
+OS Thread Id | `nid=0x6104` | The unique ID of the OS thread to which the Java Thread is mapped. We use this to correlate JVM threads to actual OS threads.  
+Status | `waiting on condition` | A human-readable string depicting the current status of the thread.  
+Last Known Java Stack Pointer | `[0x00007f7608e9a000]` | The last known Stack Pointer (SP) for the stack associated with the thread. This value is supplied using native C++ code and is interlaced with the Java Thread class using the JNI. For simple thread dumps, this information may not be useful, but for more complex diagnostics, this SP value can be used to trace lock acquisition through a program.  
+Thread state | `java.lang.Thread.State: TIMED_WAITING (sleeping)` | See [thread state](https://github.com/bluething/learnjava/tree/main/javathreadmodel#thread-state). The state should always be considered in correlation to the thread stack trace, or at least the last action in the thread stack trace.
+Stack trace | `at java.lang.Thread.sleep(java.base@14.0.1/Native Method) at io.github.bluething.java.threaddump.simulatelongpausethread.App.sleep(App.java:12)` | What is happening with our application.
+
+The format may vary slightly between platforms. This means that taking a thread dump using the SIGQUIT signal may produce a slightly different format than using jstack, for example. The format of the thread dump can also vary between different JVM implementations.
+
+##### Heap report
+
+At the end of the dump, we'll see there are several additional threads performing background operations such as Garbage Collection (GC) or object termination:
+```text
+"G1 Young RemSet Sampling" os_prio=0 cpu=3,89ms elapsed=22,56s tid=0x00007f76041a8800 nid=0x6109 runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=22,12ms elapsed=22,53s tid=0x00007f7604277800 nid=0x6113 waiting on condition  
+
+JNI global refs: 6, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 836K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 1 young (1024K), 0 survivors (0K)
+ Metaspace       used 153K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 7K, capacity 386K, committed 512K, reserved 1048576K
+```
+
+#### Thread state in thread dump summary
+
+##### NEW
+
+Rarely appear on thread dumps.
+
+##### RUNNABLE
+
+Watch out for Native Methods!  
+It's a black boxes that usually provide specific low-level functionality. When a Java thread is busy invoking one of these, it's not running Java code. It's usually running some precompiled native machine code that ships with the JVM installation.  
+See what the native method is supposed to be doing.
+
+##### BLOCKED
+
+The thread that is waiting to be able to acquire a monitor lock, or in other words, to acquire a monitor.
+
+##### WAITING
+
+There are a few standardized APIs in Java that will make a thread transition into this state, such as `Object.wait` and `LockSupport.park`.  
+Other example is `ThreadPoolExecutor` class, which has a work queue that stores tasks that need to be executed.
+
+##### TIMED_WAITING
+
+Some of the APIs that will make a thread transition into this state are `Thread.sleep`, which is quite popular, and `LockSupport.parkNanos`.
+
+##### TERMINATED
+
+Rarely appear on thread dumps.
+
 #### Read more
 
 [JVM Stacks and Stack Frames](https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames/)
