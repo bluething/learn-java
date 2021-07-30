@@ -22,7 +22,7 @@ public class FileSystemOperator {
             if (args[0].equals("read")) {
                 futures.add(executorService.submit(new DirectIOReaderCallable()));
             } else if (args[0].equals("write")){
-
+                futures.add(executorService.submit(new DirectIOWriterCallable()));
             }
         }
 
@@ -73,5 +73,32 @@ class DirectIOReaderCallable implements Callable {
             ioEx.printStackTrace();
         }
         return Thread.currentThread().getName() + " done reading " + totalByteRead + " bytes";
+    }
+}
+
+class DirectIOWriterCallable implements Callable {
+
+    @Override
+    public Object call() throws Exception {
+        // 1Mb
+        int bufferSize = 1 << 20;
+        byte[] buf = new byte[bufferSize];
+        File input = new File("");
+        File output = new File("" + Thread.currentThread().getName());
+        long totalByteRead = 0;
+        try(DirectRandomAccessFile randomAccessFileIn = new DirectRandomAccessFile(input, "r", bufferSize);
+            DirectRandomAccessFile randomAccessFileOut = new DirectRandomAccessFile(input, "rw", bufferSize)) {
+            // Write in -> out
+            int remaining = 0;
+            while(randomAccessFileIn.getFilePointer() < randomAccessFileIn.length()){
+                remaining = (int) Math.min(bufferSize, randomAccessFileIn.length() - randomAccessFileIn.getFilePointer());
+                randomAccessFileIn.read(buf, 0, remaining);
+                randomAccessFileOut.write(buf, 0, remaining);
+                totalByteRead = totalByteRead + remaining;
+            }
+        } catch (IOException ioEx) {
+            ioEx.printStackTrace();
+        }
+        return Thread.currentThread().getName() + " done writing " + totalByteRead + " bytes";
     }
 }
