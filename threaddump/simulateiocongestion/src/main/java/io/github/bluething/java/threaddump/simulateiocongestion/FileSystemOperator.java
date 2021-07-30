@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class FileSystemOperator {
+    static final String INPUT_FILE_PATH = "output-onlinefiletools.txt";
+    static final String OUTPUT_FILE_PATH = "";
+
     public static void main(String[] args) {
         if (args.length < 2) {
             throw new RuntimeException("Please specify the operation type (read/write) and the number of workers");
@@ -60,7 +63,7 @@ class DirectIOReaderCallable implements Callable {
     public Object call() throws Exception {
         int bufferSize = 1 << 20;
         byte[] buf = new byte[bufferSize];
-        File input = new File("");
+        File input = new File(FileSystemOperator.INPUT_FILE_PATH);
         long totalByteRead = 0;
         try(DirectRandomAccessFile randomAccessFile = new DirectRandomAccessFile(input, "r", bufferSize)) {
             int remaining = 0;
@@ -83,11 +86,11 @@ class DirectIOWriterCallable implements Callable {
         // 1Mb
         int bufferSize = 1 << 20;
         byte[] buf = new byte[bufferSize];
-        File input = new File("");
-        File output = new File("" + Thread.currentThread().getName());
+        File input = new File(FileSystemOperator.INPUT_FILE_PATH);
+        File output = new File(FileSystemOperator.OUTPUT_FILE_PATH + Thread.currentThread().getName());
         long totalByteRead = 0;
         try(DirectRandomAccessFile randomAccessFileIn = new DirectRandomAccessFile(input, "r", bufferSize);
-            DirectRandomAccessFile randomAccessFileOut = new DirectRandomAccessFile(input, "rw", bufferSize)) {
+            DirectRandomAccessFile randomAccessFileOut = new DirectRandomAccessFile(output, "rw", bufferSize)) {
             // Write in -> out
             int remaining = 0;
             while(randomAccessFileIn.getFilePointer() < randomAccessFileIn.length()){
