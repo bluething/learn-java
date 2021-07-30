@@ -16,6 +16,12 @@ compileJava {
 
 jar {
     enabled = true
+    manifest {
+        attributes 'Main-Class': 'io.github.bluething.java.threaddump.simulateiocongestion.FileSystemOperator'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 dependencies {
