@@ -1,0 +1,4 @@
+sudo DOCKER_BUILDKIT=1 docker build -t simulateiocognestion .
+sudo docker run -it simulateiocognestion bash
+sudo docker ps
+sudo docker stop <container_id>
