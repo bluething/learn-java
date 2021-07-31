@@ -2,3 +2,16 @@ sudo DOCKER_BUILDKIT=1 docker build -t simulateiocognestion .
 sudo docker run -it simulateiocognestion bash
 sudo docker ps
 sudo docker stop <container_id>
+
+
+Limit read/write rate from a device
+sudo docker run -it --device-read-bps /dev/nvme0n1:150kb simulateiocognestion bash
+sudo docker run -it --device-write-bps /dev/nvme0n1:150kb simulateiocognestion bash
+
+How to find the correct device
+- get all the block devices of the OS (OS dependent command).
+- put the limit on all the devices. No side effects observed.
+sudo parted -l to list all drives
+
+docker run -d --cap-add SYS_PTRACE --security-opt seccomp:unconfined --name slow-reader -it --device-read-bps /dev/nvme0n1:150kb simulateiocognestion
+docker exec -it slow-reader /bin/bash
