@@ -232,6 +232,17 @@ A file system bottleneck happens when the application is more I/O bound than it 
 
 Find more about this [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateiocongestion)
 
+#### Connection pool deadlock
+
+A deadlock is a situation where two processes are both blocked by each other, and they're both waiting for each other at the same time.  
+See sample code [here](https://github.com/bluething/learnjava/tree/main/javathreadmodel/src/main/java/io/github/bluething/java/threadmodel/deadlock)
+
+Connection pool can be defined by a managed, synchronized data structure from which different processes inside our application can borrow a resource such as a connection that they can later use for outbound communication and then "return" that resource once they no longer need it.  
+What the problem? Imagine we need more parallel connections than the amount of connections you have in the pool, we will end up exhausting our connection pool.  
+The symptoms could vary from a barely noticeable performance degradation to a completely unresponsive procedure inside our application, or an application that's unresponsive altogether.
+
+See sample code [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateconnectionpooldeadlock)
+
 #### Read more
 
 [JVM Stacks and Stack Frames](https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames/)
