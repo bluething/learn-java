@@ -1,0 +1,37 @@
+2021-08-01 21:56:13
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f01a4002a90, length=12, elements={
+0x00007f0228029800, 0x00007f02281f5800, 0x00007f02281f7800, 0x00007f02281ff000,
+0x00007f0228200800, 0x00007f0228202800, 0x00007f0228204800, 0x00007f0228206800,
+0x00007f0228266800, 0x00007f022853b800
+}
+
+"	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:537)
+	at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.get(AbstractFuture.java:104)
+	at com.google.common.cache.LocalCache$LoadingValueReference.waitForValue(LocalCache.java:3582)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+
+"pool-1-thread-2" #14 prio=5 os_prio=0 	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:262)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.1/ThreadPoolExecutor.java:630)
+elapsed=13,17s tid=0x00007f022808c800 elapsed=12,00s tid=0x00007f01f0002000 nid=0x8255 runnable  
+os_prio=0 cpu=0,09ms elapsed=13,17s tid=0x00007f02280ad800 nid=0x823c runnable  cpu=2,70ms elapsed=13,17s tid=0x00007f02281a9800 nid=0x823f runnable elapsed=13,14s 
+
+Heap
+ garbage-first heap   total 253952K, used 10157K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 9 young (9216K), 3 survivors (3072K)
+ Metaspace       used 10378K, capacity 10619K, committed 10880K, reserved 1058816K
+  class space    used 1210K, capacity 1275K, committed 1408K, reserved 1048576K
+
+Error occurred while retrieving token from: https://auth.docker.io/token org.apache.http.impl.execchain.RequestAbortedException: Request aborted
+Error occurred while sending request to: https://index.docker.io/v2/ java.lang.RuntimeException: Could not get token from cache for: Jeff
+
+BUILD SUCCESSFUL in 2m 0s
+2 actionable tasks: 1 executed, 1 up-to-date
+21.58.00: Task execution finished ':BearerAuthenticator.main()'.
+

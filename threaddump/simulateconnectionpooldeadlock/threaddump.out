@@ -1,0 +1,179 @@
+2021-08-01 21:51:35
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f42b4001280, length=12, elements={
+0x00007f4334029800, 0x00007f43341f5800, 0x00007f43341f7800, 0x00007f43341ff000,
+0x00007f4334200800, 0x00007f4334202800, 0x00007f4334204800, 0x00007f4334206800,
+0x00007f4334246800, 0x00007f433424a800, 0x00007f43344d7000, 0x00007f43344d8800
+}
+
+"main" #1 prio=5 os_prio=0 cpu=313,11ms elapsed=42,33s tid=0x00007f4334029800 nid=0x8030 waiting on condition  [0x00007f433bbda000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.1/Native Method)
+	- parking to wait for  <0x0000000719601560> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@14.0.1/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@14.0.1/AbstractQueuedSynchronizer.java:1661)
+	at java.util.concurrent.ThreadPoolExecutor.awaitTermination(java.base@14.0.1/ThreadPoolExecutor.java:1456)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.main(BearerAuthenticator.java:55)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,52ms elapsed=42,32s tid=0x00007f43341f5800 nid=0x8039 waiting on condition  [0x00007f4338120000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=42,32s tid=0x00007f43341f7800 nid=0x803a in Object.wait()  [0x00007f4314c99000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719600178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719600178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,21ms elapsed=42,32s tid=0x00007f43341ff000 nid=0x803b waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=1,22ms elapsed=42,32s tid=0x00007f4334200800 nid=0x803c runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=406,09ms elapsed=42,32s tid=0x00007f4334202800 nid=0x803d waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=412,96ms elapsed=42,32s tid=0x00007f4334204800 nid=0x803e waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=8,48ms elapsed=42,32s tid=0x00007f4334206800 nid=0x803f runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,07ms elapsed=42,30s tid=0x00007f4334246800 nid=0x8040 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,69ms elapsed=42,30s tid=0x00007f433424a800 nid=0x8042 in Object.wait()  [0x00007f4305efc000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719605998> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719605998> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"pool-1-thread-1" #13 prio=5 os_prio=0 cpu=192,92ms elapsed=42,02s tid=0x00007f43344d7000 nid=0x8048 waiting on condition  [0x00007f4305b6f000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.1/Native Method)
+	- parking to wait for  <0x00000007195a65c8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(java.base@14.0.1/LockSupport.java:341)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(java.base@14.0.1/AbstractQueuedSynchronizer.java:505)
+	at java.util.concurrent.ForkJoinPool.managedBlock(java.base@14.0.1/ForkJoinPool.java:3137)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(java.base@14.0.1/AbstractQueuedSynchronizer.java:1614)
+	at org.apache.http.pool.AbstractConnPool.getPoolEntryBlocking(AbstractConnPool.java:393)
+	at org.apache.http.pool.AbstractConnPool.access$300(AbstractConnPool.java:70)
+	at org.apache.http.pool.AbstractConnPool$2.get(AbstractConnPool.java:253)
+	- locked <0x000000071a8679a8> (a org.apache.http.pool.AbstractConnPool$2)
+	at org.apache.http.pool.AbstractConnPool$2.get(AbstractConnPool.java:198)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection(PoolingHttpClientConnectionManager.java:306)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager$1.get(PoolingHttpClientConnectionManager.java:282)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:190)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.executeMethod(BearerAuthenticator.java:158)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.TokenAuthenticationCache.fetchNewToken(TokenAuthenticationCache.java:51)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.TokenAuthenticationCache$1.load(TokenAuthenticationCache.java:36)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.TokenAuthenticationCache$1.load(TokenAuthenticationCache.java:33)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	- locked <0x000000071a860d60> (a com.google.common.cache.LocalCache$StrongWriteEntry)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3962)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3985)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4946)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.TokenAuthenticationCache.getToken(TokenAuthenticationCache.java:74)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerScheme.authenticate(BearerScheme.java:48)
+	at org.apache.http.impl.auth.HttpAuthenticator.doAuth(HttpAuthenticator.java:233)
+	at org.apache.http.impl.auth.HttpAuthenticator.generateAuthResponse(HttpAuthenticator.java:198)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:262)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.executeMethod(BearerAuthenticator.java:158)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.requestProtectedResource(BearerAuthenticator.java:147)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator$AuthenticatorRunnable.run(BearerAuthenticator.java:177)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@14.0.1/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+
+"pool-1-thread-2" #14 prio=5 os_prio=0 cpu=234,59ms elapsed=42,02s tid=0x00007f43344d8800 nid=0x8049 waiting on condition  [0x00007f4305a6e000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@14.0.1/Native Method)
+	- parking to wait for  <0x000000071a855560> (a com.google.common.util.concurrent.SettableFuture)
+	at java.util.concurrent.locks.LockSupport.park(java.base@14.0.1/LockSupport.java:211)
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:537)
+	at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.get(AbstractFuture.java:104)
+	at com.google.common.util.concurrent.Uninterruptibles.getUninterruptibly(Uninterruptibles.java:240)
+	at com.google.common.cache.LocalCache$LoadingValueReference.waitForValue(LocalCache.java:3582)
+	at com.google.common.cache.LocalCache$Segment.waitForLoadingValue(LocalCache.java:2175)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2162)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3962)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3985)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4946)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.TokenAuthenticationCache.getToken(TokenAuthenticationCache.java:74)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerScheme.authenticate(BearerScheme.java:48)
+	at org.apache.http.impl.auth.HttpAuthenticator.doAuth(HttpAuthenticator.java:233)
+	at org.apache.http.impl.auth.HttpAuthenticator.generateAuthResponse(HttpAuthenticator.java:198)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:262)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.executeMethod(BearerAuthenticator.java:158)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator.requestProtectedResource(BearerAuthenticator.java:147)
+	at io.github.bluething.java.threaddump.simulateconnectionpooldeadlock.auth.BearerAuthenticator$AuthenticatorRunnable.run(BearerAuthenticator.java:177)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@14.0.1/ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@14.0.1/ThreadPoolExecutor.java:630)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+
+"VM Thread" os_prio=0 cpu=14,08ms elapsed=42,33s tid=0x00007f43341f2800 nid=0x8038 runnable  
+
+"GC Thread#0" os_prio=0 cpu=10,37ms elapsed=42,33s tid=0x00007f433408c800 nid=0x8033 runnable  
+
+"GC Thread#1" os_prio=0 cpu=10,00ms elapsed=41,24s tid=0x00007f42fc001000 nid=0x804c runnable  
+
+"GC Thread#2" os_prio=0 cpu=10,05ms elapsed=41,24s tid=0x00007f42fc002000 nid=0x804d runnable  
+
+"GC Thread#3" os_prio=0 cpu=10,08ms elapsed=41,24s tid=0x00007f42fc003000 nid=0x804e runnable  
+
+"GC Thread#4" os_prio=0 cpu=9,82ms elapsed=41,24s tid=0x00007f42fc004800 nid=0x804f runnable  
+
+"GC Thread#5" os_prio=0 cpu=9,93ms elapsed=41,24s tid=0x00007f42fc005800 nid=0x8050 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,06ms elapsed=42,33s tid=0x00007f43340ad800 nid=0x8034 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,03ms elapsed=42,33s tid=0x00007f43340af000 nid=0x8035 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=1,38ms elapsed=42,33s tid=0x00007f43341a8000 nid=0x8036 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=8,61ms elapsed=42,33s tid=0x00007f43341a9800 nid=0x8037 runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=42,53ms elapsed=42,30s tid=0x00007f4334248800 nid=0x8041 waiting on condition  
+
+JNI global refs: 16, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 10159K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 9 young (9216K), 3 survivors (3072K)
+ Metaspace       used 10359K, capacity 10552K, committed 10880K, reserved 1058816K
+  class space    used 1210K, capacity 1274K, committed 1408K, reserved 1048576K
