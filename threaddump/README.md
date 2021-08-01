@@ -220,6 +220,18 @@ Some of the APIs that will make a thread transition into this state are `Thread.
 
 Rarely appear on thread dumps.
 
+#### Performance issues: a filesystem congestion
+
+How Java deal with file?  
+Java -> Java Native Interface -> C/C++ code  
+Watch out for Native Methods!
+
+A stagnating thread is a stuck thread. The staktrace thread isn't changing at all over time.
+
+A file system bottleneck happens when the application is more I/O bound than it hopes to be.
+
+Find more about this [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateiocongestion)
+
 #### Read more
 
 [JVM Stacks and Stack Frames](https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames/)
