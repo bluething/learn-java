@@ -1,0 +1,1151 @@
+Matching string: "1,2,3,4,5,6,7,8,9,10,11,12" with pattern "^(.*?,){12}P" 100000 times
+2021-08-04 10:15:11
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f304c1dca30, length=12, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000, 0x00007f304c1db000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=1010,98ms elapsed=1,01s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,20ms elapsed=1,00s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=1,00s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x000000071ad027f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x000000071ad027f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,18ms elapsed=1,00s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,13ms elapsed=1,00s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,25ms elapsed=1,00s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,81ms elapsed=1,00s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=1,00s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=0,99s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,14ms elapsed=0,99s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x000000071ad45088> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x000000071ad45088> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,68ms elapsed=0,96s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=0 cpu=175,72ms elapsed=0,96s tid=0x00007f304c1db000 lwp=21320 nid=0x5348 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=0,57ms elapsed=1,00s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=0,13ms elapsed=1,01s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=1,01s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=1,01s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=1,01s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,11ms elapsed=1,01s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=0,21ms elapsed=0,99s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 10052K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 10 young (10240K), 0 survivors (0K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:12
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f304c1dca30, length=12, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000, 0x00007f304c1db000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=2011,23ms elapsed=2,01s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,20ms elapsed=2,00s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=2,00s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x000000071ad027f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x000000071ad027f0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,42ms elapsed=2,00s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,20ms elapsed=2,00s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,25ms elapsed=2,00s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,81ms elapsed=2,00s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=2,00s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=1,99s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,14ms elapsed=1,99s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x000000071ad45088> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x000000071ad45088> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,68ms elapsed=1,96s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=0 cpu=175,72ms elapsed=1,96s tid=0x00007f304c1db000 lwp=21320 nid=0x5348 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=1,23ms elapsed=2,00s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=0,30ms elapsed=2,01s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=2,01s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=2,01s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=2,01s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,18ms elapsed=2,01s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=0,56ms elapsed=1,99s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 21316K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 21 young (21504K), 0 survivors (0K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:13
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f304c1dca30, length=12, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000, 0x00007f304c1db000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=3010,12ms elapsed=3,01s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=3,00s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=3,00s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,54ms elapsed=3,00s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,20ms elapsed=3,00s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,25ms elapsed=3,00s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,81ms elapsed=3,00s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=3,00s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=2,99s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=2,99s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,68ms elapsed=2,96s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=0 cpu=175,72ms elapsed=2,96s tid=0x00007f304c1db000 lwp=21320 nid=0x5348 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=2,68ms elapsed=3,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=0,92ms elapsed=3,01s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=0,68ms elapsed=0,71s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=0,78ms elapsed=0,71s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=0,61ms elapsed=0,71s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=0,58ms elapsed=0,71s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=3,01s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=3,01s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=3,01s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,23ms elapsed=3,01s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=0,72ms elapsed=2,99s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 8388K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 9 young (9216K), 1 survivors (1024K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:14
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f304c1dca30, length=12, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000, 0x00007f304c1db000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=4010,68ms elapsed=4,01s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=4,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=4,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,71ms elapsed=4,00s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,20ms elapsed=4,00s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,25ms elapsed=4,00s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,81ms elapsed=4,00s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=4,00s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=4,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=3,99s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,68ms elapsed=3,96s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=0 cpu=175,72ms elapsed=3,96s tid=0x00007f304c1db000 lwp=21320 nid=0x5348 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=3,33ms elapsed=4,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=1,10ms elapsed=4,01s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=0,77ms elapsed=1,71s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=0,84ms elapsed=1,71s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=0,73ms elapsed=1,71s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=0,76ms elapsed=1,71s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=4,01s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=4,01s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=4,01s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,27ms elapsed=4,01s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=0,90ms elapsed=4,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 17604K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 18 young (18432K), 1 survivors (1024K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:15
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f304c1dca30, length=12, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000, 0x00007f304c1db000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=5011,17ms elapsed=5,02s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=5,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=5,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,76ms elapsed=5,00s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,20ms elapsed=5,00s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,25ms elapsed=5,00s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,81ms elapsed=5,00s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=5,01s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=5,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=5,00s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,68ms elapsed=4,97s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C2 CompilerThread2" #8 daemon prio=9 os_prio=0 cpu=175,72ms elapsed=4,96s tid=0x00007f304c1db000 lwp=21320 nid=0x5348 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=3,89ms elapsed=5,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=1,29ms elapsed=5,02s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=0,86ms elapsed=2,71s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=0,88ms elapsed=2,71s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=0,79ms elapsed=2,71s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=0,94ms elapsed=2,71s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=5,02s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=5,02s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=5,01s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,31ms elapsed=5,01s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=1,07ms elapsed=5,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 27844K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 28 young (28672K), 1 survivors (1024K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:16
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f303406a1c0, length=11, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800, 0x00007f304c1b9000
+}
+
+"main" #1 prio=5 os_prio=0 cpu=6012,09ms elapsed=6,02s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=6,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=6,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719601b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0,92ms elapsed=6,01s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,20ms elapsed=6,01s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=134,26ms elapsed=6,01s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=65,82ms elapsed=6,01s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=3,72ms elapsed=6,01s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=6,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=6,00s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000719605450> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 cpu=186,69ms elapsed=5,97s tid=0x00007f304c1b9000 lwp=21319 nid=0x5347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"VM Thread" os_prio=0 cpu=4,73ms elapsed=6,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=1,41ms elapsed=6,02s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=1,03ms elapsed=3,71s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=0,97ms elapsed=3,71s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=0,88ms elapsed=3,71s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=1,06ms elapsed=3,71s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=6,02s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=6,02s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=6,02s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,42ms elapsed=6,02s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=1,64ms elapsed=6,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 37060K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 37 young (37888K), 1 survivors (1024K)
+ Metaspace       used 625K, capacity 4553K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:17
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f30302320e0, length=10, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800
+}
+
+"main" #1 prio=5 os_prio=0 cpu=7011,09ms elapsed=7,02s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=7,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=7,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=1,20ms elapsed=7,01s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,33ms elapsed=7,01s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=139,51ms elapsed=7,01s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=70,36ms elapsed=7,01s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=4,19ms elapsed=7,01s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=7,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=7,00s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"VM Thread" os_prio=0 cpu=6,25ms elapsed=7,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=2,22ms elapsed=7,02s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=1,96ms elapsed=4,71s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=1,98ms elapsed=4,71s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=1,87ms elapsed=4,71s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=1,86ms elapsed=4,71s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=7,02s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=7,02s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=7,02s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,50ms elapsed=7,02s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=1,90ms elapsed=7,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 2269K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 3 young (3072K), 1 survivors (1024K)
+ Metaspace       used 637K, capacity 4559K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:18
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f30302320e0, length=10, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800
+}
+
+"main" #1 prio=5 os_prio=0 cpu=8011,35ms elapsed=8,02s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=8,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=8,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=1,40ms elapsed=8,01s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,33ms elapsed=8,01s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=139,51ms elapsed=8,01s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=70,36ms elapsed=8,01s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=4,19ms elapsed=8,01s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=8,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=8,00s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"VM Thread" os_prio=0 cpu=7,04ms elapsed=8,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=2,28ms elapsed=8,02s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=1,99ms elapsed=5,72s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=2,11ms elapsed=5,72s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=2,00ms elapsed=5,72s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=1,94ms elapsed=5,72s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=8,02s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=8,02s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=8,02s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,57ms elapsed=8,02s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=2,09ms elapsed=8,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 11485K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 12 young (12288K), 1 survivors (1024K)
+ Metaspace       used 637K, capacity 4559K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
+2021-08-04 10:15:19
+Full thread dump OpenJDK 64-Bit Server VM (14.0.1+7 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007f30302320e0, length=10, elements={
+0x00007f309c028800, 0x00007f309c234800, 0x00007f309c236800, 0x00007f309c23e000,
+0x00007f309c240000, 0x00007f309c242000, 0x00007f309c244000, 0x00007f309c246000,
+0x00007f309c2ad800, 0x00007f309c2b1800
+}
+
+"main" #1 prio=5 os_prio=0 cpu=9011,57ms elapsed=9,02s tid=0x00007f309c028800 lwp=21301 nid=0x5335 runnable  [0x00007f30a3565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4450)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.match(java.base@14.0.1/Pattern.java:4897)
+	at java.util.regex.Pattern$GroupTail.match(java.base@14.0.1/Pattern.java:4840)
+	at java.util.regex.Pattern$BmpCharProperty.match(java.base@14.0.1/Pattern.java:3974)
+	at java.util.regex.Pattern$Curly.match1(java.base@14.0.1/Pattern.java:4437)
+	at java.util.regex.Pattern$Curly.match(java.base@14.0.1/Pattern.java:4386)
+	at java.util.regex.Pattern$GroupHead.match(java.base@14.0.1/Pattern.java:4809)
+	at java.util.regex.Pattern$Loop.matchInit(java.base@14.0.1/Pattern.java:4940)
+	at java.util.regex.Pattern$Prolog.match(java.base@14.0.1/Pattern.java:4864)
+	at java.util.regex.Pattern$Begin.match(java.base@14.0.1/Pattern.java:3691)
+	at java.util.regex.Matcher.match(java.base@14.0.1/Matcher.java:1756)
+	at java.util.regex.Matcher.matches(java.base@14.0.1/Matcher.java:713)
+	at java.util.regex.Pattern.matches(java.base@14.0.1/Pattern.java:1177)
+	at java.lang.String.matches(java.base@14.0.1/String.java:2039)
+	at io.github.bluething.java.threaddump.simulatecpuboundthread.CatastrophicBacktrackingRegex.main(CatastrophicBacktrackingRegex.java:21)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=0,31ms elapsed=9,01s tid=0x00007f309c234800 lwp=21308 nid=0x533c waiting on condition  [0x00007f30a02ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@14.0.1/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@14.0.1/Reference.java:241)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@14.0.1/Reference.java:213)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0,17ms elapsed=9,01s tid=0x00007f309c236800 lwp=21309 nid=0x533d in Object.wait()  [0x00007f30a01ed000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x00000007180061d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@14.0.1/Finalizer.java:170)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=1,59ms elapsed=9,01s tid=0x00007f309c23e000 lwp=21311 nid=0x533f waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=0,33ms elapsed=9,01s tid=0x00007f309c240000 lwp=21312 nid=0x5340 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 cpu=139,51ms elapsed=9,01s tid=0x00007f309c242000 lwp=21313 nid=0x5341 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #9 daemon prio=9 os_prio=0 cpu=70,36ms elapsed=9,01s tid=0x00007f309c244000 lwp=21314 nid=0x5342 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #10 daemon prio=9 os_prio=0 cpu=4,19ms elapsed=9,01s tid=0x00007f309c246000 lwp=21315 nid=0x5343 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" #11 daemon prio=9 os_prio=0 cpu=0,08ms elapsed=9,00s tid=0x00007f309c2ad800 lwp=21316 nid=0x5344 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=0,21ms elapsed=9,00s tid=0x00007f309c2b1800 lwp=21318 nid=0x5346 in Object.wait()  [0x00007f306d789000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@14.0.1/Native Method)
+	- waiting on <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@14.0.1/ReferenceQueue.java:155)
+	- locked <0x0000000718009208> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@14.0.1/CleanerImpl.java:148)
+	at java.lang.Thread.run(java.base@14.0.1/Thread.java:832)
+	at jdk.internal.misc.InnocuousThread.run(java.base@14.0.1/InnocuousThread.java:134)
+
+"VM Thread" os_prio=0 cpu=7,64ms elapsed=9,01s tid=0x00007f309c232000 lwp=21307 nid=0x533b runnable  
+
+"GC Thread#0" os_prio=0 cpu=2,41ms elapsed=9,02s tid=0x00007f309c08c000 lwp=21302 nid=0x5336 runnable  
+
+"GC Thread#1" os_prio=0 cpu=2,07ms elapsed=6,72s tid=0x00007f3064001000 lwp=21325 nid=0x534d runnable  
+
+"GC Thread#2" os_prio=0 cpu=2,22ms elapsed=6,72s tid=0x00007f3064002800 lwp=21326 nid=0x534e runnable  
+
+"GC Thread#3" os_prio=0 cpu=2,13ms elapsed=6,72s tid=0x00007f3064004000 lwp=21327 nid=0x534f runnable  
+
+"GC Thread#4" os_prio=0 cpu=2,08ms elapsed=6,72s tid=0x00007f3064005000 lwp=21328 nid=0x5350 runnable  
+
+"G1 Main Marker" os_prio=0 cpu=0,11ms elapsed=9,02s tid=0x00007f309c0ac800 lwp=21303 nid=0x5337 runnable  
+
+"G1 Conc#0" os_prio=0 cpu=0,06ms elapsed=9,02s tid=0x00007f309c0ae000 lwp=21304 nid=0x5338 runnable  
+
+"G1 Refine#0" os_prio=0 cpu=0,08ms elapsed=9,02s tid=0x00007f309c1a7000 lwp=21305 nid=0x5339 runnable  
+
+"G1 Young RemSet Sampling" os_prio=0 cpu=0,62ms elapsed=9,02s tid=0x00007f309c1a8800 lwp=21306 nid=0x533a runnable  
+"VM Periodic Task Thread" os_prio=0 cpu=2,30ms elapsed=9,00s tid=0x00007f309c2af800 lwp=21317 nid=0x5345 waiting on condition  
+
+JNI global refs: 9, weak refs: 0
+
+Heap
+ garbage-first heap   total 253952K, used 21725K [0x000000070b800000, 0x0000000800000000)
+  region size 1024K, 22 young (22528K), 1 survivors (1024K)
+ Metaspace       used 637K, capacity 4559K, committed 4864K, reserved 1056768K
+  class space    used 48K, capacity 409K, committed 512K, reserved 1048576K
+
