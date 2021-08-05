@@ -1,0 +1,43 @@
+07:56:06.468951 connect(8, {sa_family=AF_INET, sin_port=htons(443), sin_addr=inet_addr("34.193.45.8")}, 16) = 0 <0.151449>
+07:56:06.620741 getsockname(8, {sa_family=AF_INET, sin_port=htons(39284), sin_addr=inet_addr("172.17.0.2")}, [28->16]) = 0 <0.000118>
+07:56:06.724290 sendto(8, "\26\3\3\1\271\1\0\1\265\3\3\245\305\rO\227\337X\7\5+\247\211J\20\305\256\337GM\204\353"..., 446, 0, NULL, 0) = 446 <0.000054>
+07:56:06.724483 recvfrom(8, "\26\3\3\0Y", 5, 0, NULL, NULL) = 5 <0.305776>
+07:56:07.030734 recvfrom(8, "\2\0\0U\3\0035\300\353\237\350m\316\201\31\371\270\341o\350\375\262Ra-\2\270\246\300\234\35-"..., 89, 0, NULL, NULL) = 89 <0.000102>
+07:56:07.039286 recvfrom(8, "\26\3\3\23H", 5, 0, NULL, NULL) = 5 <0.000045>
+07:56:07.039526 recvfrom(8, "\v\0\23D\0\23A\0\5\3310\202\5\3250\202\4\275\240\3\2\1\2\2\20\v\2146v\252\362\315"..., 1024, 0, NULL, NULL) = 1024 <0.000028>
+07:56:07.039662 recvfrom(8, "n\342\17\2\0\0\1y\7\241\216U\0\0\4\3\0F0D\2 \36~\334)}%\223Z \303"..., 1024, 0, NULL, NULL) = 1024 <0.000036>
+07:56:07.039818 recvfrom(8, "U\35\17\1\1\377\4\4\3\2\1\2060\35\6\3U\35\16\4\26\4\24Y\244f\6R\240{\225\222"..., 1024, 0, NULL, NULL) = 1024 <0.000046>
+07:56:07.039960 recvfrom(8, "\251\371Hg0\226\356\224x^o\211\243Q\3000\206f\241Ef\272T\353\243\303\221\371H\334\377\321"..., 1024, 0, NULL, NULL) = 1024 <0.000035>
+07:56:07.040093 recvfrom(8, " Certificate Authority - G20\202\1\"0"..., 840, 0, NULL, NULL) = 840 <0.000044>
+07:56:07.099194 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.099445 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.099819 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.100074 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.100325 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.100757 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.100992 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.101726 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.102048 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.102299 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.102604 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.102971 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.103168 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.128365 recvfrom(8, "\26\3\3\1M", 5, 0, NULL, NULL) = 5 <0.000017>
+07:56:07.128463 recvfrom(8, "\f\0\1I\3\0\27A\4\271\246Y\340\371\247\367\21\305\335\261y\23\210zs4\375\200KT\220\250"..., 333, 0, NULL, NULL) = 333 <0.000008>
+07:56:07.129545 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.131336 recvfrom(8, "\26\3\3\0\4", 5, 0, NULL, NULL) = 5 <0.000008>
+07:56:07.131402 recvfrom(8, "\16\0\0\0", 4, 0, NULL, NULL) = 4 <0.000009>
+07:56:07.136956 sendto(8, "\26\3\3\0F\20\0\0BA\49>\257\260\24\5\330\260\323\256\245\221\260\271\t{\360s\273\337\355"..., 75, 0, NULL, 0) = 75 <0.000052>
+07:56:07.149646 sendto(8, "\24\3\3\0\1\1", 6, 0, NULL, 0) = 6 <0.000083>
+07:56:07.161503 sendto(8, "\26\3\3\0(\0\0\0\0\0\0\0\0b\tr\274\252\24\206X\207\340\365\3\312\3150\255\276A\231"..., 45, 0, NULL, 0) = 45 <0.000054>
+07:56:07.161714 recvfrom(8, "\24\3\3\0\1", 5, 0, NULL, NULL) = 5 <0.251076>
+07:56:07.413228 recvfrom(8, "\1", 1, 0, NULL, NULL) = 1 <0.000128>
+07:56:07.415770 recvfrom(8, "\26\3\3\0(", 5, 0, NULL, NULL) = 5 <0.000131>
+07:56:07.416191 recvfrom(8, "\7\"\207\305\21\236\24\341XOQ:g\324\222\17wN\361\265\277\277\370\312\317\360\335\36\313\310rZ"..., 40, 0, NULL, NULL) = 40 <0.000059>
+07:56:07.440631 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.447202 sendto(8, "\27\3\3\0\257\0\0\0\0\0\0\0\1nk\343\22m\344$2\321w6\242\312=~c\340\245T"..., 180, 0, NULL, 0) = 180 <0.000167>
+07:56:07.447940 recvfrom(8, "\27\3\3\1\235", 5, 0, NULL, NULL) = 5 <0.253792>
+07:56:07.702069 recvfrom(8, "\7\"\207\305\21\236\24\342f\237\316\227,IMD\330L\22\241\311\235P|\275\347\361\324\222R\\\1"..., 413, 0, NULL, NULL) = 413 <0.000107>
+07:56:07.706905 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.710246 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
+07:56:07.712661 --- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_ACCERR, si_addr=0x7fbe3cc9c008} ---
