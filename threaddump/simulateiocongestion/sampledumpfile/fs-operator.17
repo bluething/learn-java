@@ -1,0 +1,41 @@
+03:57:16.569189 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.000939>
+03:57:17.570320 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:17.570477 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000041>
+03:57:17.570628 rt_sigreturn({mask=[]}) = 202 <0.000134>
+03:57:17.570865 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004242>
+03:57:18.575389 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:18.575688 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000214>
+03:57:18.576185 rt_sigreturn({mask=[]}) = 202 <0.000190>
+03:57:18.576684 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.003502>
+03:57:19.580414 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:19.580645 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000230>
+03:57:19.581192 rt_sigreturn({mask=[]}) = 202 <0.000197>
+03:57:19.581544 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004318>
+03:57:20.586015 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:20.586200 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000107>
+03:57:20.586468 rt_sigreturn({mask=[]}) = 202 <0.000039>
+03:57:20.586686 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004704>
+03:57:21.591653 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:21.591856 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000096>
+03:57:21.592069 rt_sigreturn({mask=[]}) = 202 <0.000050>
+03:57:21.592290 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.003886>
+03:57:22.596334 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:22.596585 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000214>
+03:57:22.596973 rt_sigreturn({mask=[]}) = 202 <0.000028>
+03:57:22.597138 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004540>
+03:57:23.601906 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:23.602154 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000166>
+03:57:23.602573 rt_sigreturn({mask=[]}) = 202 <0.000047>
+03:57:23.602822 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004267>
+03:57:24.607252 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:24.607405 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000119>
+03:57:24.607674 rt_sigreturn({mask=[]}) = 202 <0.000026>
+03:57:24.607846 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <1.004415>
+03:57:25.612381 --- SIGQUIT {si_signo=SIGQUIT, si_code=SI_USER, si_pid=19, si_uid=0} ---
+03:57:25.612505 futex(0x7f175c009108, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000047>
+03:57:25.612663 rt_sigreturn({mask=[]}) = 202 <0.000062>
+03:57:25.612831 futex(0x7f17632759d0, FUTEX_WAIT, 29, NULL) = 0 <59.542744>
+03:58:25.155689 munmap(0x7f17565bb000, 94651007) = 0 <0.000305>
+03:58:25.156103 close(3)                = 0 <0.000034>
+03:58:25.156342 exit_group(0)           = ?
+03:58:25.166713 +++ exited with 0 +++

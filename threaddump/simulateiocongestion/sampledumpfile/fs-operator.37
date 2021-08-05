@@ -1,0 +1,765 @@
+03:57:16.605175 set_robust_list(0x7f17450b49e0, 24) = 0 <0.000014>
+03:57:16.605243 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f1724000000 <0.000009>
+03:57:16.605272 munmap(0x7f1728000000, 67108864) = 0 <0.000012>
+03:57:16.605304 mprotect(0x7f1724000000, 135168, PROT_READ|PROT_WRITE) = 0 <0.000009>
+03:57:16.605339 sched_getaffinity(37, 32, [0, 1, 2, 3, 4, 5, 6, 7]) = 8 <0.000013>
+03:57:16.605379 sched_getaffinity(37, 32, [0, 1, 2, 3, 4, 5, 6, 7]) = 8 <0.000007>
+03:57:16.605411 getpid()                = 17 <0.000006>
+03:57:16.605439 gettid()                = 37 <0.000006>
+03:57:16.605464 rt_sigprocmask(SIG_BLOCK, NULL, [QUIT], 8) = 0 <0.000006>
+03:57:16.605492 rt_sigprocmask(SIG_UNBLOCK, [HUP ILL BUS FPE SEGV USR2 TERM], NULL, 8) = 0 <0.000006>
+03:57:16.605521 rt_sigprocmask(SIG_BLOCK, [QUIT], NULL, 8) = 0 <0.000006>
+03:57:16.605549 futex(0x7f175c011878, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000009>
+03:57:16.605582 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, NULL) = 0 <0.000055>
+03:57:16.605660 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000012>
+03:57:16.605693 prctl(PR_SET_NAME, "G1 Young RemSet"...) = 0 <0.000007>
+03:57:16.605729 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999802}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.606814 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000007>
+03:57:16.606842 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999904}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.607929 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000008>
+03:57:16.607959 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999924}) = -1 ETIMEDOUT (Connection timed out) <0.001059>
+03:57:16.609042 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.609066 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999911}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.610152 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000007>
+03:57:16.610181 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999699}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.611268 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000007>
+03:57:16.611305 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999751}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.612387 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.612415 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999842}) = -1 ETIMEDOUT (Connection timed out) <0.001061>
+03:57:16.613498 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.613521 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999829}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.614606 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.614639 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999752}) = -1 ETIMEDOUT (Connection timed out) <0.001058>
+03:57:16.615725 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000007>
+03:57:16.615753 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999755}) = -1 ETIMEDOUT (Connection timed out) <0.001059>
+03:57:16.616831 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.616857 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999802}) = -1 ETIMEDOUT (Connection timed out) <0.001058>
+03:57:16.617944 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000008>
+03:57:16.617967 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999833}) = -1 ETIMEDOUT (Connection timed out) <0.001068>
+03:57:16.619059 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.619080 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999829}) = -1 ETIMEDOUT (Connection timed out) <0.001058>
+03:57:16.620158 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.620181 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999859}) = -1 ETIMEDOUT (Connection timed out) <0.001061>
+03:57:16.621263 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.621291 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999810}) = -1 ETIMEDOUT (Connection timed out) <0.001060>
+03:57:16.622376 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.622398 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999802}) = -1 ETIMEDOUT (Connection timed out) <0.001057>
+03:57:16.623473 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.623493 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999936}) = -1 ETIMEDOUT (Connection timed out) <0.001059>
+03:57:16.624602 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.624625 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999903}) = -1 ETIMEDOUT (Connection timed out) <0.001057>
+03:57:16.625698 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000008>
+03:57:16.625720 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999900}) = -1 ETIMEDOUT (Connection timed out) <0.001072>
+03:57:16.626809 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000032>
+03:57:16.626873 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999688}) = -1 ETIMEDOUT (Connection timed out) <0.001057>
+03:57:16.627950 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000008>
+03:57:16.627971 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999782}) = -1 ETIMEDOUT (Connection timed out) <0.001057>
+03:57:16.629047 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.629068 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999760}) = -1 ETIMEDOUT (Connection timed out) <0.001058>
+03:57:16.630148 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000006>
+03:57:16.630168 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999886}) = -1 ETIMEDOUT (Connection timed out) <0.001057>
+03:57:16.631243 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.631262 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999939}) = -1 ETIMEDOUT (Connection timed out) <0.001056>
+03:57:16.632336 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000005>
+03:57:16.632355 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999927}) = -1 ETIMEDOUT (Connection timed out) <0.001058>
+03:57:16.633431 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000004>
+03:57:16.633449 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999944}) = -1 ETIMEDOUT (Connection timed out) <0.001064>
+03:57:16.634613 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000086>
+03:57:16.634719 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999659}) = -1 ETIMEDOUT (Connection timed out) <0.001147>
+03:57:16.635958 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000055>
+03:57:16.636032 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=999681}) = -1 ETIMEDOUT (Connection timed out) <0.001068>
+03:57:16.637120 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000008>
+03:57:16.637141 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=968}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000008>
+03:57:16.637167 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=975}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000007>
+03:57:16.637191 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299999728}) = -1 ETIMEDOUT (Connection timed out) <0.300127>
+03:57:16.937417 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000034>
+03:57:16.937582 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=1122}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000052>
+03:57:16.937769 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997988}) = -1 ETIMEDOUT (Connection timed out) <0.300199>
+03:57:17.238181 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000039>
+03:57:17.238385 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=1334}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000033>
+03:57:17.238552 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997397}) = -1 ETIMEDOUT (Connection timed out) <0.300121>
+03:57:17.538896 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000060>
+03:57:17.539171 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=1554}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000033>
+03:57:17.539334 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998268}) = -1 ETIMEDOUT (Connection timed out) <0.300205>
+03:57:17.839887 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000086>
+03:57:17.840204 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=1905}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000056>
+03:57:17.840421 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996477}) = -1 ETIMEDOUT (Connection timed out) <0.300308>
+03:57:18.140962 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000065>
+03:57:18.141315 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=2135}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000032>
+03:57:18.141458 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998136}) = -1 ETIMEDOUT (Connection timed out) <0.300448>
+03:57:18.442088 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000037>
+03:57:18.442329 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=2315}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000039>
+03:57:18.442531 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997418}) = -1 ETIMEDOUT (Connection timed out) <0.300261>
+03:57:18.742999 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000051>
+03:57:18.743245 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=2590}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000052>
+03:57:18.743472 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996034}) = -1 ETIMEDOUT (Connection timed out) <0.300480>
+03:57:19.044293 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:57:19.044787 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=3002}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000159>
+03:57:19.045286 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996965}) = -1 ETIMEDOUT (Connection timed out) <0.300283>
+03:57:19.345917 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000109>
+03:57:19.346306 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=3547}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000110>
+03:57:19.346690 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996550}) = -1 ETIMEDOUT (Connection timed out) <0.300270>
+03:57:19.647280 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000143>
+03:57:19.647705 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4058}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000128>
+03:57:19.648097 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998554}) = -1 ETIMEDOUT (Connection timed out) <0.300259>
+03:57:19.948693 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000129>
+03:57:19.949044 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=0}, ...}) = 0 <0.000033>
+03:57:19.949222 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997362}) = -1 ETIMEDOUT (Connection timed out) <0.300206>
+03:57:20.249712 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000149>
+03:57:20.250181 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=403}, ...}) = 0 <0.000142>
+03:57:20.250604 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996971}) = -1 ETIMEDOUT (Connection timed out) <0.300183>
+03:57:20.551045 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000086>
+03:57:20.551384 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=798}, ...}) = 0 <0.000098>
+03:57:20.551720 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997042}) = -1 ETIMEDOUT (Connection timed out) <0.300326>
+03:57:20.852297 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000078>
+03:57:20.852537 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=1261}, ...}) = 0 <0.000073>
+03:57:20.852808 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996996}) = -1 ETIMEDOUT (Connection timed out) <0.300489>
+03:57:21.153539 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000135>
+03:57:21.153911 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=1747}, ...}) = 0 <0.000091>
+03:57:21.154201 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997024}) = -1 ETIMEDOUT (Connection timed out) <0.300299>
+03:57:21.454768 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000090>
+03:57:21.455112 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=2204}, ...}) = 0 <0.000088>
+03:57:21.455402 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998262}) = -1 ETIMEDOUT (Connection timed out) <0.300209>
+03:57:21.755906 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000171>
+03:57:21.756402 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=2717}, ...}) = 0 <0.000161>
+03:57:21.756879 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996984}) = -1 ETIMEDOUT (Connection timed out) <0.300246>
+03:57:22.057336 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000117>
+03:57:22.109220 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=3144}, ...}) = 0 <0.000145>
+03:57:22.109512 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998175}) = -1 ETIMEDOUT (Connection timed out) <0.300214>
+03:57:22.409997 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:57:22.410457 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=3514}, ...}) = 0 <0.000159>
+03:57:22.410918 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997279}) = -1 ETIMEDOUT (Connection timed out) <0.300365>
+03:57:22.711468 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000029>
+03:57:22.711601 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=3835}, ...}) = 0 <0.000026>
+03:57:22.711718 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998154}) = -1 ETIMEDOUT (Connection timed out) <0.300172>
+03:57:23.012057 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000042>
+03:57:23.012257 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=4043}, ...}) = 0 <0.000041>
+03:57:23.012436 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997179}) = -1 ETIMEDOUT (Connection timed out) <0.300135>
+03:57:23.312844 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000081>
+03:57:23.313184 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=4277}, ...}) = 0 <0.000055>
+03:57:23.313435 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997071}) = -1 ETIMEDOUT (Connection timed out) <0.300141>
+03:57:23.613809 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000045>
+03:57:23.613931 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, NULL) = 0 <0.097614>
+03:57:23.711843 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000242>
+03:57:23.712189 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, NULL) = 0 <0.000813>
+03:57:23.713399 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000046>
+03:57:23.713510 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, NULL) = 0 <0.001085>
+03:57:23.714686 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000045>
+03:57:23.714809 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=4737}, ...}) = 0 <0.000042>
+03:57:23.715090 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998138}) = -1 ETIMEDOUT (Connection timed out) <0.300138>
+03:57:24.015395 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000022>
+03:57:24.015640 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=4935}, ...}) = 0 <0.000024>
+03:57:24.015775 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997424}) = -1 ETIMEDOUT (Connection timed out) <0.300141>
+03:57:24.316103 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000052>
+03:57:24.316259 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=5123}, ...}) = 0 <0.000052>
+03:57:24.316433 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998174}) = -1 ETIMEDOUT (Connection timed out) <0.300136>
+03:57:24.616627 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000024>
+03:57:24.616686 futex(0x7f175c183d78, FUTEX_WAIT_PRIVATE, 0, NULL) = 0 <0.023427>
+03:57:24.640146 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000040>
+03:57:24.640217 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=5358}, ...}) = 0 <0.000030>
+03:57:24.640269 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299999929}) = -1 ETIMEDOUT (Connection timed out) <0.300275>
+03:57:24.940727 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000054>
+03:57:24.940967 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=5542}, ...}) = 0 <0.000047>
+03:57:24.941173 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996918}) = -1 ETIMEDOUT (Connection timed out) <0.300172>
+03:57:25.241567 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000115>
+03:57:25.241951 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=5887}, ...}) = 0 <0.000103>
+03:57:25.242301 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997406}) = -1 ETIMEDOUT (Connection timed out) <0.300221>
+03:57:25.542779 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000100>
+03:57:25.543086 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=6243}, ...}) = 0 <0.000087>
+03:57:25.543368 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997911}) = -1 ETIMEDOUT (Connection timed out) <0.300128>
+03:57:25.843767 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000099>
+03:57:25.844100 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=6581}, ...}) = 0 <0.000041>
+03:57:25.844324 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997384}) = -1 ETIMEDOUT (Connection timed out) <0.300274>
+03:57:26.144757 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000019>
+03:57:26.144867 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=6779}, ...}) = 0 <0.000017>
+03:57:26.144955 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998259}) = -1 ETIMEDOUT (Connection timed out) <0.300147>
+03:57:26.445316 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000047>
+03:57:26.445534 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=7005}, ...}) = 0 <0.000023>
+03:57:26.445751 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997411}) = -1 ETIMEDOUT (Connection timed out) <0.300158>
+03:57:26.746109 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000045>
+03:57:26.746330 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=7258}, ...}) = 0 <0.000049>
+03:57:26.746537 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997473}) = -1 ETIMEDOUT (Connection timed out) <0.300158>
+03:57:27.046850 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000028>
+03:57:27.047005 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=7483}, ...}) = 0 <0.000026>
+03:57:27.047168 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998174}) = -1 ETIMEDOUT (Connection timed out) <0.300233>
+03:57:27.347699 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000157>
+03:57:27.348199 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=7933}, ...}) = 0 <0.000165>
+03:57:27.348709 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996838}) = -1 ETIMEDOUT (Connection timed out) <0.300513>
+03:57:27.649552 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000136>
+03:57:27.650075 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=8507}, ...}) = 0 <0.000098>
+03:57:27.650391 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996835}) = -1 ETIMEDOUT (Connection timed out) <0.300255>
+03:57:27.950924 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000125>
+03:57:27.951332 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=8923}, ...}) = 0 <0.000123>
+03:57:27.951736 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997344}) = -1 ETIMEDOUT (Connection timed out) <0.300260>
+03:57:28.252305 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000150>
+03:57:28.252747 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=9375}, ...}) = 0 <0.000080>
+03:57:28.253083 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997178}) = -1 ETIMEDOUT (Connection timed out) <0.300125>
+03:57:28.553488 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000034>
+03:57:28.553738 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=9658}, ...}) = 0 <0.000025>
+03:57:28.553900 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998168}) = -1 ETIMEDOUT (Connection timed out) <0.300123>
+03:57:28.854288 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000073>
+03:57:28.854608 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=9954}, ...}) = 0 <0.000109>
+03:57:28.854954 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997326}) = -1 ETIMEDOUT (Connection timed out) <0.300198>
+03:57:29.155420 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000059>
+03:57:29.155741 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=10354}, ...}) = 0 <0.000066>
+03:57:29.156045 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996967}) = -1 ETIMEDOUT (Connection timed out) <0.300157>
+03:57:29.456361 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000047>
+03:57:29.456465 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=10564}, ...}) = 0 <0.000050>
+03:57:29.456622 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998980}) = -1 ETIMEDOUT (Connection timed out) <0.300149>
+03:57:29.756832 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000011>
+03:57:29.756901 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=10782}, ...}) = 0 <0.000009>
+03:57:29.756954 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998880}) = -1 ETIMEDOUT (Connection timed out) <0.300085>
+03:57:30.057125 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000015>
+03:57:30.057229 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=10855}, ...}) = 0 <0.000015>
+03:57:30.057326 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998625}) = -1 ETIMEDOUT (Connection timed out) <0.300109>
+03:57:30.357562 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000040>
+03:57:30.357847 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11017}, ...}) = 0 <0.000034>
+03:57:30.358026 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997661}) = -1 ETIMEDOUT (Connection timed out) <0.300093>
+03:57:30.658231 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000016>
+03:57:30.658323 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11137}, ...}) = 0 <0.000018>
+03:57:30.658404 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998946}) = -1 ETIMEDOUT (Connection timed out) <0.300183>
+03:57:30.958737 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000050>
+03:57:30.958945 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11290}, ...}) = 0 <0.000034>
+03:57:30.959123 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997513}) = -1 ETIMEDOUT (Connection timed out) <0.300159>
+03:57:31.259480 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000087>
+03:57:31.259698 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11500}, ...}) = 0 <0.000018>
+03:57:31.259768 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998877}) = -1 ETIMEDOUT (Connection timed out) <0.300118>
+03:57:31.559948 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000010>
+03:57:31.560011 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11576}, ...}) = 0 <0.000009>
+03:57:31.560056 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998965}) = -1 ETIMEDOUT (Connection timed out) <0.300120>
+03:57:31.860340 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000067>
+03:57:31.860608 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=11745}, ...}) = 0 <0.000045>
+03:57:31.860807 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997437}) = -1 ETIMEDOUT (Connection timed out) <0.300217>
+03:57:32.161256 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000047>
+03:57:32.161562 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=12071}, ...}) = 0 <0.000054>
+03:57:32.161927 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997271}) = -1 ETIMEDOUT (Connection timed out) <0.300150>
+03:57:32.462359 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000044>
+03:57:32.462576 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=12299}, ...}) = 0 <0.000056>
+03:57:32.462779 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997257}) = -1 ETIMEDOUT (Connection timed out) <0.300177>
+03:57:32.763151 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000037>
+03:57:32.763348 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=12513}, ...}) = 0 <0.000046>
+03:57:32.763539 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996878}) = -1 ETIMEDOUT (Connection timed out) <0.300097>
+03:57:33.063759 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000012>
+03:57:33.063841 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=12642}, ...}) = 0 <0.000012>
+03:57:33.063908 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998729}) = -1 ETIMEDOUT (Connection timed out) <0.300116>
+03:57:33.364172 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000035>
+03:57:33.364342 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=12761}, ...}) = 0 <0.000035>
+03:57:33.364487 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997790}) = -1 ETIMEDOUT (Connection timed out) <0.300154>
+03:57:33.664889 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000124>
+03:57:33.665286 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=13059}, ...}) = 0 <0.000126>
+03:57:33.665622 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998084}) = -1 ETIMEDOUT (Connection timed out) <0.300105>
+03:57:33.965871 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000009>
+03:57:33.965935 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=13251}, ...}) = 0 <0.000013>
+03:57:33.965993 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998660}) = -1 ETIMEDOUT (Connection timed out) <0.300124>
+03:57:34.266235 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000141>
+03:57:34.266578 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=13492}, ...}) = 0 <0.000060>
+03:57:34.266883 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997494}) = -1 ETIMEDOUT (Connection timed out) <0.300110>
+03:57:34.567212 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000052>
+03:57:34.567391 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=13766}, ...}) = 0 <0.000017>
+03:57:34.567533 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998574}) = -1 ETIMEDOUT (Connection timed out) <0.300104>
+03:57:34.867759 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000019>
+03:57:34.867871 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=13908}, ...}) = 0 <0.000016>
+03:57:34.867961 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998243}) = -1 ETIMEDOUT (Connection timed out) <0.300144>
+03:57:35.168272 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000035>
+03:57:35.168476 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=14056}, ...}) = 0 <0.000031>
+03:57:35.168677 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299995965}) = -1 ETIMEDOUT (Connection timed out) <0.300150>
+03:57:35.469071 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000037>
+03:57:35.469306 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=14240}, ...}) = 0 <0.000067>
+03:57:35.469595 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996639}) = -1 ETIMEDOUT (Connection timed out) <0.300162>
+03:57:35.770421 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000043>
+03:57:35.770705 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=14551}, ...}) = 0 <0.000046>
+03:57:35.771017 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996370}) = -1 ETIMEDOUT (Connection timed out) <0.300175>
+03:57:36.071447 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000036>
+03:57:36.071639 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=14717}, ...}) = 0 <0.000024>
+03:57:36.071787 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997549}) = -1 ETIMEDOUT (Connection timed out) <0.300208>
+03:57:36.372250 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000157>
+03:57:36.372701 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=15090}, ...}) = 0 <0.000250>
+03:57:36.373237 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996312}) = -1 ETIMEDOUT (Connection timed out) <0.300261>
+03:57:36.673871 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000143>
+03:57:36.674335 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=15497}, ...}) = 0 <0.000140>
+03:57:36.674749 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996518}) = -1 ETIMEDOUT (Connection timed out) <0.300193>
+03:57:36.975201 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000036>
+03:57:36.975435 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=15861}, ...}) = 0 <0.000067>
+03:57:36.975676 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997000}) = -1 ETIMEDOUT (Connection timed out) <0.300209>
+03:57:37.276129 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000079>
+03:57:37.276337 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=16241}, ...}) = 0 <0.000075>
+03:57:37.276564 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997987}) = -1 ETIMEDOUT (Connection timed out) <0.300326>
+03:57:37.577213 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000173>
+03:57:37.577760 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=16806}, ...}) = 0 <0.000168>
+03:57:37.578287 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996731}) = -1 ETIMEDOUT (Connection timed out) <0.300301>
+03:57:37.878977 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000172>
+03:57:37.879510 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=17410}, ...}) = 0 <0.000168>
+03:57:37.880037 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996947}) = -1 ETIMEDOUT (Connection timed out) <0.300198>
+03:57:38.180562 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000058>
+03:57:38.180845 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=17903}, ...}) = 0 <0.000045>
+03:57:38.181026 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997204}) = -1 ETIMEDOUT (Connection timed out) <0.300152>
+03:57:38.481362 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000032>
+03:57:38.481563 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=18104}, ...}) = 0 <0.000054>
+03:57:38.481780 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997487}) = -1 ETIMEDOUT (Connection timed out) <0.300142>
+03:57:38.782225 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000171>
+03:57:38.782683 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=18478}, ...}) = 0 <0.000113>
+03:57:38.783089 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996778}) = -1 ETIMEDOUT (Connection timed out) <0.300211>
+03:57:39.083554 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000027>
+03:57:39.083723 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=18808}, ...}) = 0 <0.000034>
+03:57:39.083911 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997244}) = -1 ETIMEDOUT (Connection timed out) <0.300179>
+03:57:39.384280 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000032>
+03:57:39.384532 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=18966}, ...}) = 0 <0.000041>
+03:57:39.384845 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996918}) = -1 ETIMEDOUT (Connection timed out) <0.300210>
+03:57:39.685298 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000155>
+03:57:39.694739 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=19246}, ...}) = 0 <0.000030>
+03:57:39.694894 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997990}) = -1 ETIMEDOUT (Connection timed out) <0.300138>
+03:57:39.995196 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000070>
+03:57:39.995415 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=19517}, ...}) = 0 <0.000070>
+03:57:39.995611 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998596}) = -1 ETIMEDOUT (Connection timed out) <0.300176>
+03:57:40.296007 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000078>
+03:57:40.296294 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=19959}, ...}) = 0 <0.000076>
+03:57:40.296583 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996900}) = -1 ETIMEDOUT (Connection timed out) <0.300192>
+03:57:40.597063 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000039>
+03:57:40.597334 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=20285}, ...}) = 0 <0.000038>
+03:57:40.597531 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997106}) = -1 ETIMEDOUT (Connection timed out) <0.300250>
+03:57:40.898100 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000163>
+03:57:40.898620 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=20673}, ...}) = 0 <0.000157>
+03:57:40.899055 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996782}) = -1 ETIMEDOUT (Connection timed out) <0.300220>
+03:57:41.199589 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000138>
+03:57:41.200024 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=21195}, ...}) = 0 <0.000106>
+03:57:41.200337 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996782}) = -1 ETIMEDOUT (Connection timed out) <0.300225>
+03:57:41.500855 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000150>
+03:57:41.501323 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=21674}, ...}) = 0 <0.000131>
+03:57:41.501748 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997362}) = -1 ETIMEDOUT (Connection timed out) <0.300228>
+03:57:41.802352 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000154>
+03:57:41.802812 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=22209}, ...}) = 0 <0.000150>
+03:57:41.803264 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997087}) = -1 ETIMEDOUT (Connection timed out) <0.300170>
+03:57:42.103647 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000061>
+03:57:42.103900 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=22585}, ...}) = 0 <0.000042>
+03:57:42.104081 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997183}) = -1 ETIMEDOUT (Connection timed out) <0.300104>
+03:57:42.404350 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000034>
+03:57:42.404515 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=22780}, ...}) = 0 <0.000033>
+03:57:42.404681 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998084}) = -1 ETIMEDOUT (Connection timed out) <0.300190>
+03:57:42.705053 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000043>
+03:57:42.705254 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=22980}, ...}) = 0 <0.000046>
+03:57:42.705442 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997896}) = -1 ETIMEDOUT (Connection timed out) <0.300230>
+03:57:43.005983 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000123>
+03:57:43.006400 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=23467}, ...}) = 0 <0.000107>
+03:57:43.006764 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997242}) = -1 ETIMEDOUT (Connection timed out) <0.300488>
+03:57:43.307600 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000162>
+03:57:43.308114 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=24059}, ...}) = 0 <0.000166>
+03:57:43.308631 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996826}) = -1 ETIMEDOUT (Connection timed out) <0.300222>
+03:57:43.609160 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000096>
+03:57:43.609443 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=24608}, ...}) = 0 <0.000064>
+03:57:43.609656 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997909}) = -1 ETIMEDOUT (Connection timed out) <0.300219>
+03:57:43.910065 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000043>
+03:57:43.910309 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=24867}, ...}) = 0 <0.000042>
+03:57:43.910643 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997024}) = -1 ETIMEDOUT (Connection timed out) <0.300163>
+03:57:44.211028 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000033>
+03:57:44.211208 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=25173}, ...}) = 0 <0.000039>
+03:57:44.211346 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997885}) = -1 ETIMEDOUT (Connection timed out) <0.300458>
+03:57:44.512109 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000168>
+03:57:44.512631 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=25598}, ...}) = 0 <0.000171>
+03:57:44.513148 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996881}) = -1 ETIMEDOUT (Connection timed out) <0.300288>
+03:57:44.813685 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000140>
+03:57:44.814114 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=26086}, ...}) = 0 <0.000146>
+03:57:44.814558 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997293}) = -1 ETIMEDOUT (Connection timed out) <0.300287>
+03:57:45.115202 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000154>
+03:57:45.115676 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=26623}, ...}) = 0 <0.000146>
+03:57:45.116159 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997274}) = -1 ETIMEDOUT (Connection timed out) <0.300230>
+03:57:45.416623 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000085>
+03:57:45.416906 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=27126}, ...}) = 0 <0.000103>
+03:57:45.417190 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998276}) = -1 ETIMEDOUT (Connection timed out) <0.300484>
+03:57:45.717964 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:57:45.718449 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=27618}, ...}) = 0 <0.000155>
+03:57:45.718965 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996879}) = -1 ETIMEDOUT (Connection timed out) <0.300209>
+03:57:46.019419 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000036>
+03:57:46.019584 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=28006}, ...}) = 0 <0.000032>
+03:57:46.019736 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997754}) = -1 ETIMEDOUT (Connection timed out) <0.300227>
+03:57:46.320161 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000100>
+03:57:46.320447 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=28298}, ...}) = 0 <0.000051>
+03:57:46.320669 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998277}) = -1 ETIMEDOUT (Connection timed out) <0.300234>
+03:57:46.621244 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000166>
+03:57:46.621663 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=28706}, ...}) = 0 <0.000155>
+03:57:46.622126 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996535}) = -1 ETIMEDOUT (Connection timed out) <0.300315>
+03:57:46.922816 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000153>
+03:57:46.923317 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=29244}, ...}) = 0 <0.000156>
+03:57:46.923816 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996927}) = -1 ETIMEDOUT (Connection timed out) <0.300419>
+03:57:47.224628 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000171>
+03:57:47.225157 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=29802}, ...}) = 0 <0.000113>
+03:57:47.225531 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996496}) = -1 ETIMEDOUT (Connection timed out) <0.300359>
+03:57:47.526220 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000169>
+03:57:47.526745 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=30392}, ...}) = 0 <0.000113>
+03:57:47.527115 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996806}) = -1 ETIMEDOUT (Connection timed out) <0.300487>
+03:57:47.827935 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000173>
+03:57:47.828459 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=30998}, ...}) = 0 <0.000109>
+03:57:47.828826 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996696}) = -1 ETIMEDOUT (Connection timed out) <0.300252>
+03:57:48.129332 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000086>
+03:57:48.129585 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=31503}, ...}) = 0 <0.000066>
+03:57:48.129867 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996601}) = -1 ETIMEDOUT (Connection timed out) <0.300381>
+03:57:48.430534 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000100>
+03:57:48.430916 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=32007}, ...}) = 0 <0.000139>
+03:57:48.431351 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997226}) = -1 ETIMEDOUT (Connection timed out) <0.300487>
+03:57:48.732168 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000148>
+03:57:48.732635 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=32565}, ...}) = 0 <0.000163>
+03:57:48.733119 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996731}) = -1 ETIMEDOUT (Connection timed out) <0.300242>
+03:57:49.033761 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000134>
+03:57:49.034170 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=33102}, ...}) = 0 <0.000271>
+03:57:49.034760 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996592}) = -1 ETIMEDOUT (Connection timed out) <0.300316>
+03:57:49.335378 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000104>
+03:57:49.335732 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=33673}, ...}) = 0 <0.000290>
+03:57:49.336242 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997537}) = -1 ETIMEDOUT (Connection timed out) <0.300519>
+03:57:49.637129 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000147>
+03:57:49.637578 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=34208}, ...}) = 0 <0.000147>
+03:57:49.638046 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996601}) = -1 ETIMEDOUT (Connection timed out) <0.300194>
+03:57:49.938504 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000186>
+03:57:49.938943 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=34707}, ...}) = 0 <0.000124>
+03:57:49.939344 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998029}) = -1 ETIMEDOUT (Connection timed out) <0.300322>
+03:57:50.239922 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000036>
+03:57:50.240188 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=35074}, ...}) = 0 <0.000171>
+03:57:50.240708 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996869}) = -1 ETIMEDOUT (Connection timed out) <0.300284>
+03:57:50.541340 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000104>
+03:57:50.541610 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=35576}, ...}) = 0 <0.000098>
+03:57:50.541934 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997838}) = -1 ETIMEDOUT (Connection timed out) <0.300308>
+03:57:50.842575 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000141>
+03:57:50.843019 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=36065}, ...}) = 0 <0.000142>
+03:57:50.843454 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997096}) = -1 ETIMEDOUT (Connection timed out) <0.300259>
+03:57:51.144035 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000149>
+03:57:51.144474 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=36545}, ...}) = 0 <0.000138>
+03:57:51.144924 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998249}) = -1 ETIMEDOUT (Connection timed out) <0.300239>
+03:57:51.445412 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000041>
+03:57:51.445611 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=36911}, ...}) = 0 <0.000038>
+03:57:51.445810 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997212}) = -1 ETIMEDOUT (Connection timed out) <0.300141>
+03:57:51.746134 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000041>
+03:57:51.746311 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=37098}, ...}) = 0 <0.000038>
+03:57:51.746472 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998264}) = -1 ETIMEDOUT (Connection timed out) <0.300183>
+03:57:52.046922 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000139>
+03:57:52.047381 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=37454}, ...}) = 0 <0.000158>
+03:57:52.047809 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997986}) = -1 ETIMEDOUT (Connection timed out) <0.300272>
+03:57:52.348391 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000169>
+03:57:52.348821 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=38039}, ...}) = 0 <0.000080>
+03:57:52.349079 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998547}) = -1 ETIMEDOUT (Connection timed out) <0.300364>
+03:57:52.649621 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000138>
+03:57:52.650080 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=38492}, ...}) = 0 <0.000139>
+03:57:52.650480 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997230}) = -1 ETIMEDOUT (Connection timed out) <0.300292>
+03:57:52.951115 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:57:52.951599 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=39024}, ...}) = 0 <0.000152>
+03:57:52.952082 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996633}) = -1 ETIMEDOUT (Connection timed out) <0.300467>
+03:57:53.252949 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000176>
+03:57:53.253508 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=39609}, ...}) = 0 <0.000197>
+03:57:53.253998 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996887}) = -1 ETIMEDOUT (Connection timed out) <0.300288>
+03:57:53.554605 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000159>
+03:57:53.555060 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=40092}, ...}) = 0 <0.000037>
+03:57:53.555280 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996885}) = -1 ETIMEDOUT (Connection timed out) <0.300198>
+03:57:53.855761 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000055>
+03:57:53.856094 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=40448}, ...}) = 0 <0.000113>
+03:57:53.856461 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997182}) = -1 ETIMEDOUT (Connection timed out) <0.300280>
+03:57:54.157093 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000148>
+03:57:54.157566 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=40978}, ...}) = 0 <0.000173>
+03:57:54.158102 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996860}) = -1 ETIMEDOUT (Connection timed out) <0.300487>
+03:57:54.458907 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000171>
+03:57:54.459406 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=41470}, ...}) = 0 <0.000110>
+03:57:54.459861 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996518}) = -1 ETIMEDOUT (Connection timed out) <0.300296>
+03:57:54.760483 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000154>
+03:57:54.760960 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=41989}, ...}) = 0 <0.000158>
+03:57:54.761432 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997328}) = -1 ETIMEDOUT (Connection timed out) <0.300218>
+03:57:55.061991 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000130>
+03:57:55.062449 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=42596}, ...}) = 0 <0.000127>
+03:57:55.062885 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996816}) = -1 ETIMEDOUT (Connection timed out) <0.300180>
+03:57:55.363264 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000030>
+03:57:55.363506 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=42945}, ...}) = 0 <0.000038>
+03:57:55.363794 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998160}) = -1 ETIMEDOUT (Connection timed out) <0.300245>
+03:57:55.664351 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000169>
+03:57:55.664852 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=43449}, ...}) = 0 <0.000114>
+03:57:55.665254 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997990}) = -1 ETIMEDOUT (Connection timed out) <0.300168>
+03:57:55.965563 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000025>
+03:57:55.965714 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=43805}, ...}) = 0 <0.000084>
+03:57:55.965953 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998298}) = -1 ETIMEDOUT (Connection timed out) <0.300184>
+03:57:56.266432 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:57:56.266925 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=44283}, ...}) = 0 <0.000101>
+03:57:56.267274 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996870}) = -1 ETIMEDOUT (Connection timed out) <0.300292>
+03:57:56.567859 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000152>
+03:57:56.568312 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=44814}, ...}) = 0 <0.000144>
+03:57:56.568719 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997237}) = -1 ETIMEDOUT (Connection timed out) <0.300342>
+03:57:56.869402 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000135>
+03:57:56.869876 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=45394}, ...}) = 0 <0.000108>
+03:57:56.870226 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996694}) = -1 ETIMEDOUT (Connection timed out) <0.300202>
+03:57:57.170738 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000130>
+03:57:57.171117 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=45799}, ...}) = 0 <0.000033>
+03:57:57.171338 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996675}) = -1 ETIMEDOUT (Connection timed out) <0.300225>
+03:57:57.471753 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000052>
+03:57:57.472004 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=45981}, ...}) = 0 <0.000156>
+03:57:57.472453 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997335}) = -1 ETIMEDOUT (Connection timed out) <0.300306>
+03:57:57.773077 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000126>
+03:57:57.773490 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=46546}, ...}) = 0 <0.000128>
+03:57:57.773880 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996917}) = -1 ETIMEDOUT (Connection timed out) <0.300379>
+03:57:58.074601 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000170>
+03:57:58.075072 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=47091}, ...}) = 0 <0.000093>
+03:57:58.075406 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996903}) = -1 ETIMEDOUT (Connection timed out) <0.300281>
+03:57:58.375998 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000168>
+03:57:58.376524 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=47661}, ...}) = 0 <0.000153>
+03:57:58.377010 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996869}) = -1 ETIMEDOUT (Connection timed out) <0.300235>
+03:57:58.677548 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000112>
+03:57:58.677908 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=48226}, ...}) = 0 <0.000091>
+03:57:58.678190 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997275}) = -1 ETIMEDOUT (Connection timed out) <0.300264>
+03:57:58.978761 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000181>
+03:57:58.979323 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=48814}, ...}) = 0 <0.000072>
+03:57:58.979668 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997566}) = -1 ETIMEDOUT (Connection timed out) <0.300331>
+03:57:59.280360 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000157>
+03:57:59.280826 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=49225}, ...}) = 0 <0.000173>
+03:57:59.281391 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996651}) = -1 ETIMEDOUT (Connection timed out) <0.300524>
+03:57:59.582292 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000160>
+03:57:59.582798 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=49834}, ...}) = 0 <0.000158>
+03:57:59.583297 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996840}) = -1 ETIMEDOUT (Connection timed out) <0.300249>
+03:57:59.883875 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000089>
+03:57:59.884184 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=50391}, ...}) = 0 <0.000079>
+03:57:59.884445 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997265}) = -1 ETIMEDOUT (Connection timed out) <0.300468>
+03:58:00.185181 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000127>
+03:58:00.185567 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=50871}, ...}) = 0 <0.000121>
+03:58:00.186001 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997299}) = -1 ETIMEDOUT (Connection timed out) <0.300197>
+03:58:00.486412 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000055>
+03:58:00.486613 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=51157}, ...}) = 0 <0.000024>
+03:58:00.486746 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997637}) = -1 ETIMEDOUT (Connection timed out) <0.300277>
+03:58:00.787329 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000162>
+03:58:00.787831 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=51558}, ...}) = 0 <0.000150>
+03:58:00.788273 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996617}) = -1 ETIMEDOUT (Connection timed out) <0.300322>
+03:58:01.088895 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000110>
+03:58:01.089233 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=52095}, ...}) = 0 <0.000074>
+03:58:01.089507 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997330}) = -1 ETIMEDOUT (Connection timed out) <0.300477>
+03:58:01.390264 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000130>
+03:58:01.390688 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=52512}, ...}) = 0 <0.000127>
+03:58:01.391105 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997097}) = -1 ETIMEDOUT (Connection timed out) <0.300282>
+03:58:01.691743 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000095>
+03:58:01.692157 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=52984}, ...}) = 0 <0.000130>
+03:58:01.692606 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997264}) = -1 ETIMEDOUT (Connection timed out) <0.300254>
+03:58:01.993150 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000133>
+03:58:01.993562 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=53456}, ...}) = 0 <0.000168>
+03:58:01.994069 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997780}) = -1 ETIMEDOUT (Connection timed out) <0.300468>
+03:58:02.294795 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000053>
+03:58:02.295036 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=53879}, ...}) = 0 <0.000048>
+03:58:02.295290 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996818}) = -1 ETIMEDOUT (Connection timed out) <0.300451>
+03:58:02.596026 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000137>
+03:58:02.596467 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=54264}, ...}) = 0 <0.000146>
+03:58:02.596918 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996969}) = -1 ETIMEDOUT (Connection timed out) <0.300316>
+03:58:02.897606 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000126>
+03:58:02.898054 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=54792}, ...}) = 0 <0.000127>
+03:58:02.898464 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996958}) = -1 ETIMEDOUT (Connection timed out) <0.300255>
+03:58:03.199053 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000151>
+03:58:03.199512 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=55290}, ...}) = 0 <0.000147>
+03:58:03.199939 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997257}) = -1 ETIMEDOUT (Connection timed out) <0.300255>
+03:58:03.500447 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000051>
+03:58:03.500733 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=55645}, ...}) = 0 <0.000158>
+03:58:03.501193 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997324}) = -1 ETIMEDOUT (Connection timed out) <0.300237>
+03:58:03.801776 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000150>
+03:58:03.802235 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=56116}, ...}) = 0 <0.000145>
+03:58:03.802687 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997349}) = -1 ETIMEDOUT (Connection timed out) <0.300223>
+03:58:04.103245 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000142>
+03:58:04.103599 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=56525}, ...}) = 0 <0.000032>
+03:58:04.103781 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997292}) = -1 ETIMEDOUT (Connection timed out) <0.300237>
+03:58:04.404275 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000083>
+03:58:04.404616 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=56865}, ...}) = 0 <0.000071>
+03:58:04.404875 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997880}) = -1 ETIMEDOUT (Connection timed out) <0.300476>
+03:58:04.705605 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000134>
+03:58:04.706070 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=57328}, ...}) = 0 <0.000125>
+03:58:04.706486 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997310}) = -1 ETIMEDOUT (Connection timed out) <0.300247>
+03:58:05.007062 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000125>
+03:58:05.007482 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=57789}, ...}) = 0 <0.000132>
+03:58:05.007860 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996964}) = -1 ETIMEDOUT (Connection timed out) <0.300496>
+03:58:05.308691 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000149>
+03:58:05.309187 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=58316}, ...}) = 0 <0.000146>
+03:58:05.309626 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996842}) = -1 ETIMEDOUT (Connection timed out) <0.300225>
+03:58:05.610194 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000087>
+03:58:05.610461 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=58791}, ...}) = 0 <0.000079>
+03:58:05.610722 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997329}) = -1 ETIMEDOUT (Connection timed out) <0.300281>
+03:58:05.911307 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000128>
+03:58:05.911728 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=59293}, ...}) = 0 <0.000132>
+03:58:05.912149 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997229}) = -1 ETIMEDOUT (Connection timed out) <0.300451>
+03:58:06.212917 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000125>
+03:58:06.213310 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=59759}, ...}) = 0 <0.000106>
+03:58:06.213619 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997318}) = -1 ETIMEDOUT (Connection timed out) <0.300255>
+03:58:06.514240 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000144>
+03:58:06.514709 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=60230}, ...}) = 0 <0.000140>
+03:58:06.515170 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996911}) = -1 ETIMEDOUT (Connection timed out) <0.300488>
+03:58:06.816026 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000147>
+03:58:06.816503 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=60770}, ...}) = 0 <0.000147>
+03:58:06.816974 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996898}) = -1 ETIMEDOUT (Connection timed out) <0.300524>
+03:58:07.117889 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000146>
+03:58:07.118366 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=61304}, ...}) = 0 <0.000099>
+03:58:07.118721 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996881}) = -1 ETIMEDOUT (Connection timed out) <0.300230>
+03:58:07.419120 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000042>
+03:58:07.419306 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=61674}, ...}) = 0 <0.000040>
+03:58:07.419476 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997428}) = -1 ETIMEDOUT (Connection timed out) <0.300267>
+03:58:07.719937 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000044>
+03:58:07.720138 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=61880}, ...}) = 0 <0.000040>
+03:58:07.720315 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996926}) = -1 ETIMEDOUT (Connection timed out) <0.300315>
+03:58:08.020828 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000044>
+03:58:08.021033 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=62101}, ...}) = 0 <0.000035>
+03:58:08.021201 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996884}) = -1 ETIMEDOUT (Connection timed out) <0.300210>
+03:58:08.321607 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000103>
+03:58:08.321954 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=62334}, ...}) = 0 <0.000058>
+03:58:08.322185 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996917}) = -1 ETIMEDOUT (Connection timed out) <0.300188>
+03:58:08.622667 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000115>
+03:58:08.623050 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=62689}, ...}) = 0 <0.000088>
+03:58:08.623370 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996925}) = -1 ETIMEDOUT (Connection timed out) <0.300486>
+03:58:08.924173 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000133>
+03:58:08.924608 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=63190}, ...}) = 0 <0.000131>
+03:58:08.925028 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997070}) = -1 ETIMEDOUT (Connection timed out) <0.300233>
+03:58:09.225500 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000070>
+03:58:09.225748 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=63544}, ...}) = 0 <0.000043>
+03:58:09.225951 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997075}) = -1 ETIMEDOUT (Connection timed out) <0.300181>
+03:58:09.526338 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000050>
+03:58:09.526555 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=63762}, ...}) = 0 <0.000045>
+03:58:09.526747 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997232}) = -1 ETIMEDOUT (Connection timed out) <0.300357>
+03:58:09.827304 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000044>
+03:58:09.827514 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=63990}, ...}) = 0 <0.000039>
+03:58:09.827733 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997252}) = -1 ETIMEDOUT (Connection timed out) <0.300435>
+03:58:10.128361 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000048>
+03:58:10.128577 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=64224}, ...}) = 0 <0.000047>
+03:58:10.128770 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997388}) = -1 ETIMEDOUT (Connection timed out) <0.300235>
+03:58:10.429212 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000050>
+03:58:10.429430 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=64454}, ...}) = 0 <0.000036>
+03:58:10.429604 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997309}) = -1 ETIMEDOUT (Connection timed out) <0.300188>
+03:58:10.730027 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000039>
+03:58:10.730239 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=64674}, ...}) = 0 <0.000035>
+03:58:10.730429 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997162}) = -1 ETIMEDOUT (Connection timed out) <0.300114>
+03:58:11.030792 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000045>
+03:58:11.030943 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=64868}, ...}) = 0 <0.000042>
+03:58:11.031105 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998170}) = -1 ETIMEDOUT (Connection timed out) <0.300411>
+03:58:11.331785 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000126>
+03:58:11.332199 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=65219}, ...}) = 0 <0.000126>
+03:58:11.332610 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997000}) = -1 ETIMEDOUT (Connection timed out) <0.300725>
+03:58:11.633615 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000130>
+03:58:11.634048 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=65646}, ...}) = 0 <0.000124>
+03:58:11.634453 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997275}) = -1 ETIMEDOUT (Connection timed out) <0.300566>
+03:58:11.935364 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000131>
+03:58:11.935789 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=66132}, ...}) = 0 <0.000124>
+03:58:11.936200 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997369}) = -1 ETIMEDOUT (Connection timed out) <0.300287>
+03:58:12.236822 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000149>
+03:58:12.237286 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=66618}, ...}) = 0 <0.000098>
+03:58:12.237555 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997364}) = -1 ETIMEDOUT (Connection timed out) <0.300487>
+03:58:12.538355 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000142>
+03:58:12.538823 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=67073}, ...}) = 0 <0.000143>
+03:58:12.539296 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996819}) = -1 ETIMEDOUT (Connection timed out) <0.300485>
+03:58:12.840075 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000080>
+03:58:12.840308 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=67536}, ...}) = 0 <0.000041>
+03:58:12.840661 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996930}) = -1 ETIMEDOUT (Connection timed out) <0.300515>
+03:58:13.141520 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000048>
+03:58:13.141845 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=67959}, ...}) = 0 <0.000128>
+03:58:13.142265 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997408}) = -1 ETIMEDOUT (Connection timed out) <0.300419>
+03:58:13.443075 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000160>
+03:58:13.443549 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=68465}, ...}) = 0 <0.000148>
+03:58:13.443963 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997313}) = -1 ETIMEDOUT (Connection timed out) <0.300419>
+03:58:13.744683 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000132>
+03:58:13.745116 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=68938}, ...}) = 0 <0.000089>
+03:58:13.745426 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997280}) = -1 ETIMEDOUT (Connection timed out) <0.300635>
+03:58:14.046389 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000104>
+03:58:14.046818 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=69346}, ...}) = 0 <0.000075>
+03:58:14.047115 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299998238}) = -1 ETIMEDOUT (Connection timed out) <0.300360>
+03:58:14.347820 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000156>
+03:58:14.348296 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=69836}, ...}) = 0 <0.000103>
+03:58:14.348617 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996958}) = -1 ETIMEDOUT (Connection timed out) <0.300261>
+03:58:14.649144 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000127>
+03:58:14.649564 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=70311}, ...}) = 0 <0.000095>
+03:58:14.649904 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997279}) = -1 ETIMEDOUT (Connection timed out) <0.300223>
+03:58:14.950430 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000142>
+03:58:14.950900 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=70804}, ...}) = 0 <0.000141>
+03:58:14.951353 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997121}) = -1 ETIMEDOUT (Connection timed out) <0.300262>
+03:58:15.251936 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000131>
+03:58:15.252364 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=71242}, ...}) = 0 <0.000132>
+03:58:15.252788 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997348}) = -1 ETIMEDOUT (Connection timed out) <0.300280>
+03:58:15.553376 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000082>
+03:58:15.553704 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=71774}, ...}) = 0 <0.000083>
+03:58:15.553964 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997210}) = -1 ETIMEDOUT (Connection timed out) <0.300291>
+03:58:15.854546 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000148>
+03:58:15.854986 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=72288}, ...}) = 0 <0.000090>
+03:58:15.855290 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997257}) = -1 ETIMEDOUT (Connection timed out) <0.300309>
+03:58:16.155889 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000135>
+03:58:16.156279 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=72830}, ...}) = 0 <0.000093>
+03:58:16.156568 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997253}) = -1 ETIMEDOUT (Connection timed out) <0.300275>
+03:58:16.457125 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000144>
+03:58:16.457535 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=73363}, ...}) = 0 <0.000061>
+03:58:16.457808 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997247}) = -1 ETIMEDOUT (Connection timed out) <0.300240>
+03:58:16.758328 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000086>
+03:58:16.758626 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=73816}, ...}) = 0 <0.000117>
+03:58:16.759003 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997975}) = -1 ETIMEDOUT (Connection timed out) <0.300221>
+03:58:17.059495 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000089>
+03:58:17.059729 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=74260}, ...}) = 0 <0.000081>
+03:58:17.059974 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997218}) = -1 ETIMEDOUT (Connection timed out) <0.300324>
+03:58:17.360577 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000150>
+03:58:17.361035 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=74735}, ...}) = 0 <0.000149>
+03:58:17.361481 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997000}) = -1 ETIMEDOUT (Connection timed out) <0.300307>
+03:58:17.662131 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000080>
+03:58:17.662526 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=75198}, ...}) = 0 <0.000144>
+03:58:17.662987 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996842}) = -1 ETIMEDOUT (Connection timed out) <0.300227>
+03:58:17.963556 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000128>
+03:58:17.963977 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=75603}, ...}) = 0 <0.000128>
+03:58:17.964390 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997293}) = -1 ETIMEDOUT (Connection timed out) <0.300284>
+03:58:18.264975 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000122>
+03:58:18.265347 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=76050}, ...}) = 0 <0.000070>
+03:58:18.265584 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997530}) = -1 ETIMEDOUT (Connection timed out) <0.300251>
+03:58:18.566138 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000128>
+03:58:18.566551 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=76405}, ...}) = 0 <0.000122>
+03:58:18.566959 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997140}) = -1 ETIMEDOUT (Connection timed out) <0.300443>
+03:58:18.867724 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000126>
+03:58:18.868143 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=76870}, ...}) = 0 <0.000126>
+03:58:18.868559 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997080}) = -1 ETIMEDOUT (Connection timed out) <0.300460>
+03:58:19.169379 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000092>
+03:58:19.169701 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=77368}, ...}) = 0 <0.000078>
+03:58:19.169959 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997097}) = -1 ETIMEDOUT (Connection timed out) <0.300141>
+03:58:19.470359 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000089>
+03:58:19.470690 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=77806}, ...}) = 0 <0.000145>
+03:58:19.471131 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997229}) = -1 ETIMEDOUT (Connection timed out) <0.300266>
+03:58:19.771743 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000148>
+03:58:19.772193 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=78312}, ...}) = 0 <0.000098>
+03:58:19.772520 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997250}) = -1 ETIMEDOUT (Connection timed out) <0.300334>
+03:58:20.073167 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000106>
+03:58:20.073550 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=78903}, ...}) = 0 <0.000050>
+03:58:20.073845 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996627}) = -1 ETIMEDOUT (Connection timed out) <0.300291>
+03:58:20.374466 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000152>
+03:58:20.374965 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=79412}, ...}) = 0 <0.000184>
+03:58:20.375468 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996814}) = -1 ETIMEDOUT (Connection timed out) <0.300239>
+03:58:20.676051 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000085>
+03:58:20.676379 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=79856}, ...}) = 0 <0.000061>
+03:58:20.676682 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997178}) = -1 ETIMEDOUT (Connection timed out) <0.300232>
+03:58:20.977204 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000041>
+03:58:20.977443 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=80149}, ...}) = 0 <0.000052>
+03:58:20.977622 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996919}) = -1 ETIMEDOUT (Connection timed out) <0.300308>
+03:58:21.278262 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000146>
+03:58:21.278719 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=80527}, ...}) = 0 <0.000146>
+03:58:21.279179 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997366}) = -1 ETIMEDOUT (Connection timed out) <0.300435>
+03:58:21.579957 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000160>
+03:58:21.580419 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=80996}, ...}) = 0 <0.000128>
+03:58:21.580839 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997308}) = -1 ETIMEDOUT (Connection timed out) <0.300278>
+03:58:21.881451 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000134>
+03:58:21.881900 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=81486}, ...}) = 0 <0.000135>
+03:58:21.882347 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996950}) = -1 ETIMEDOUT (Connection timed out) <0.300244>
+03:58:22.182823 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000040>
+03:58:22.183024 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=81817}, ...}) = 0 <0.000044>
+03:58:22.183214 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996979}) = -1 ETIMEDOUT (Connection timed out) <0.300385>
+03:58:22.483791 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000122>
+03:58:22.484203 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=82155}, ...}) = 0 <0.000156>
+03:58:22.484675 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997339}) = -1 ETIMEDOUT (Connection timed out) <0.300570>
+03:58:22.785528 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000131>
+03:58:22.785937 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=82690}, ...}) = 0 <0.000128>
+03:58:22.786354 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997343}) = -1 ETIMEDOUT (Connection timed out) <0.300395>
+03:58:23.087066 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000128>
+03:58:23.087488 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=83178}, ...}) = 0 <0.000090>
+03:58:23.087798 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997182}) = -1 ETIMEDOUT (Connection timed out) <0.300357>
+03:58:23.388441 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000132>
+03:58:23.388869 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=83643}, ...}) = 0 <0.000278>
+03:58:23.389557 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997163}) = -1 ETIMEDOUT (Connection timed out) <0.300588>
+03:58:23.690438 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000155>
+03:58:23.690904 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=84218}, ...}) = 0 <0.000155>
+03:58:23.691367 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299996865}) = -1 ETIMEDOUT (Connection timed out) <0.300246>
+03:58:23.991937 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000121>
+03:58:23.992334 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=84706}, ...}) = 0 <0.000122>
+03:58:23.992729 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997261}) = -1 ETIMEDOUT (Connection timed out) <0.300273>
+03:58:24.293348 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000154>
+03:58:24.293845 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=85215}, ...}) = 0 <0.000099>
+03:58:24.294174 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997214}) = -1 ETIMEDOUT (Connection timed out) <0.300254>
+03:58:24.594715 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000157>
+03:58:24.595192 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=85719}, ...}) = 0 <0.000141>
+03:58:24.595660 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997090}) = -1 ETIMEDOUT (Connection timed out) <0.300496>
+03:58:24.896495 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000153>
+03:58:24.896941 getrusage(RUSAGE_THREAD, {ru_utime={tv_sec=0, tv_usec=4472}, ru_stime={tv_sec=0, tv_usec=86241}, ...}) = 0 <0.000100>
+03:58:24.897277 futex(0x7f175c183d7c, FUTEX_WAIT_PRIVATE, 0, {tv_sec=0, tv_nsec=299997092}) = 0 <0.253645>
+03:58:25.151070 futex(0x7f175c183d28, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000024>
+03:58:25.151172 futex(0x7f175c011678, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000034>
+03:58:25.151292 madvise(0x7f1744fb3000, 1032192, MADV_DONTNEED) = 0 <0.000036>
+03:58:25.151445 exit(0)                 = ?
+03:58:25.151550 +++ exited with 0 +++
