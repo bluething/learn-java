@@ -260,6 +260,10 @@ Form app thread stack trace, find lwp then open file from strace with suffix is 
 `03:57:30.492966 pread64(11, "oobxyizrxnddaikxwwwznxhiscfhktsi"..., 1048576, 1048576) = 1048576 <34.121663>`  
 From this line we can see read operation took long time to finish.
 
+##### TCP connection
+
+See [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateconnectionpooldeadlock)
+
 #### Read more
 
 [JVM Stacks and Stack Frames](https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames/)
