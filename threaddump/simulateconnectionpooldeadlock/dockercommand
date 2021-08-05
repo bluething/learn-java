@@ -1,0 +1,3 @@
+sudo DOCKER_BUILDKIT=1 docker build -t simulateconnectionpooldeadlock .
+docker run -d --cap-add SYS_PTRACE --security-opt seccomp:unconfined --name con-pool -it simulateconnectionpooldeadlock bash
+docker exec -it con-pool /bin/bash
