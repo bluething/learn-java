@@ -243,6 +243,23 @@ The symptoms could vary from a barely noticeable performance degradation to a co
 
 See sample code [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateconnectionpooldeadlock)
 
+#### How we know correlation between Java thread and system resources
+
+##### CPU bound thread
+
+See [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulatecpuboundthread)
+
+##### I/O bound thread
+
+See [here](https://github.com/bluething/learnjava/tree/main/threaddump/simulateiocongestion)  
+We should consider the amount of cores we have on the system and the amount of processes we have on the system currently.
+
+The I/O wait percentage represents how much of the total time the active processes were spending waiting for disk-related instructions to complete. In most cases, using this data is a good enough indication that our system performance could be hampered by a poorly performing disk.
+
+Form app thread stack trace, find lwp then open file from strace with suffix is the lwp value. Find the native method.  
+`03:57:30.492966 pread64(11, "oobxyizrxnddaikxwwwznxhiscfhktsi"..., 1048576, 1048576) = 1048576 <34.121663>`  
+From this line we can see read operation took long time to finish.
+
 #### Read more
 
 [JVM Stacks and Stack Frames](https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames/)

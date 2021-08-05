@@ -51,6 +51,10 @@ Our thread call `pread` native method. Find this in the file.
 ```
 As we can see, this line tell us the process took almost 7s to finish. I can assume this process is I/O bound.
 
+##### The debugging chain
+
+Run dump-fd.sh for shortcut debugging tool.
+
 #### Watch out of I/O weight
 
 Find with top command  
