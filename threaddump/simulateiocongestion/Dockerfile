@@ -4,5 +4,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY /build/libs/simulateiocongestion-1.0.0-SNAPSHOT.jar /app
 COPY output-onlinefiletools.txt /app
+COPY dump-fd.sh /app
+COPY dump-threads.sh /app
+COPY nid-translator.pl /app
 RUN apt-get update && apt-get install -y procps
 RUN apt-get install strace -y
