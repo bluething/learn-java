@@ -65,3 +65,9 @@ Check for other thread stack. In the middle of stack we can see
 ```  
 This stack say we try to get new token, after that we try to make http call using the pool. But the stack said we need wait for something (the connection release by connection manager).  
 When no connections are available, the thread waiting for a connection will block until a connection is made available.
+
+#### Finding TCP connection started by thread
+
+Run `debug-network.sh` then find lwp in worker thread stack trace.  
+Open strace output file with suffix value same with lwp value above.  
+We can see tcp connection status there.
