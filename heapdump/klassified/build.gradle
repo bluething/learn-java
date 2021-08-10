@@ -17,7 +17,7 @@ compileJava {
 jar {
     enabled = true
     manifest {
-        attributes 'Main-Class': 'io.github.bluething.java.heapdump.klassified.MemoryLeakRunner'
+        attributes 'Main-Class': 'io.github.bluething.java.heapdump.klassified.KlassifiedApplication'
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
