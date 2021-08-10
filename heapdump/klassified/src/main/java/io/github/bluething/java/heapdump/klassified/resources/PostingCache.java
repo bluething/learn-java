@@ -1,7 +1,7 @@
 package io.github.bluething.java.heapdump.klassified.resources;
 
-import com.monotonic.klassified.api.Posting;
-import com.monotonic.klassified.jdbi.Advert;
+import io.github.bluething.java.heapdump.klassified.api.Posting;
+import io.github.bluething.java.heapdump.klassified.jdbi.Advert;
 
 import java.util.HashMap;
 import java.util.Map;
