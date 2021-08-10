@@ -38,6 +38,14 @@ public class PostingCache
         {
             return Long.hashCode(id);
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            PostingId postingId = (PostingId) o;
+            return id == postingId.id;
+        }
     }
 
 }
