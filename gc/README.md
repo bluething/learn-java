@@ -120,6 +120,20 @@ The following objects will also be placed in the old generation:
 The Permanent generation contains metadata required by the JVM to describe the classes and methods used in the application. The permanent generation is populated by the JVM at runtime based on classes in use by the application.  
 Classes may get collected (unloaded) if the JVM finds they are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage collection.
 
+### Garbage collector type
+
+#### Serial Garbage Collector
+
+#### Parallel Garbage Collector
+
+#### Concurrent Mark Sweep (CMS) Garbage Collector
+
+#### Garbage-First (G1) Garbage Collector
+
+#### Z Garbage Collector
+
+#### Shenandoah Garbage Collector
+
 ### Reference
 
 [How Does Garbage Collection Work in Java?](https://www.alibabacloud.com/blog/how-does-garbage-collection-work-in-java_595387)  
