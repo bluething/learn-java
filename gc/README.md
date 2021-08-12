@@ -113,7 +113,7 @@ The following objects will also be placed in the old generation:
 1. Large objects.  
    An object that requires a large amount of contiguous memory space.
 2. Long-lived objects.  
-   The VM sets an age counter for each object. In normal conditions, objects are constantly moving between the From and To survivor spaces. After objects survive a minor GC, they have their age incremented by one. When the age of an object is increased to 15, it will be promoted to the old generation. Of course, JVM also supports setting the age threshold.
+   The VM sets an age counter for each object. In normal conditions, objects are constantly moving between the survivor0 and survivor1 survivor spaces. After objects survive a minor GC, they have their age incremented by one. When the age of an object is increased to 15, it will be promoted to the old generation. Of course, JVM also supports setting the age threshold.
 
 #### Permanent generation
 
