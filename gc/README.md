@@ -211,14 +211,14 @@ G1 collector step by step
 
 G1 collection phases on old generation
 
-Phase | Description
------ | ----------- 
-1. Initial Mark (STW) | Mark survivor regions (root regions) which may have references to objects in old generation.
-2. Root Region Scanning | Scan survivor regions for references into the old generation. This happens while the application continues to run. The phase must be completed before a young GC can occur.
-3. Concurrent Marking | Find live objects over the entire heap. This happens while the application is running. This phase can be interrupted by young generation garbage collections.
-4. Remark (STW) | Completes the marking of live object in the heap. Uses an algorithm called snapshot-at-the-beginning (SATB)
-5. Cleanup (STW and concurrent) | Performs accounting on live objects and completely free regions (STW). Scrubs the Remembered Sets (STW). Reset the empty regions and return them to the free list (STW)
-*Copying (STW) | Evacuate or copy live objects to new unused regions.
+Step | Phase | Description
+---- | ----- | ----------- 
+1 | Initial Mark (STW) | Mark survivor regions (root regions) which may have references to objects in old generation.
+2 | Root Region Scanning | Scan survivor regions for references into the old generation. This happens while the application continues to run. The phase must be completed before a young GC can occur.
+3 | Concurrent Marking | Find live objects over the entire heap. This happens while the application is running. This phase can be interrupted by young generation garbage collections.
+4 | Remark (STW) | Completes the marking of live object in the heap. Uses an algorithm called snapshot-at-the-beginning (SATB)
+5 | Cleanup (STW and concurrent) | Performs accounting on live objects and completely free regions (STW). Scrubs the Remembered Sets (STW). Reset the empty regions and return them to the free list (STW)
+* | Copying (STW) | Evacuate or copy live objects to new unused regions.
 
 G1 footprint have larger JVM process size than Parallel or CMS. This is largely related to "accounting" data structures such as _Remembered Sets_ and _Collection Sets_.
 
