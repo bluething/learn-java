@@ -189,9 +189,15 @@ G1 achieves `predictability` by tracking information about previous application 
 ![g1 heap layout](https://github.com/bluething/learnjava/blob/main/images/g1heap.PNG?raw=true)  
 In G1 GC, HotSpot introduces the concept of "regions". A single large contiguous Java heap space divides into multiple fixed-sized heap regions. Neither the young nor the old generation has to be contiguous.   
 A list of "free" regions maintains these regions. As the need arises, the free regions are assigned to either the young or the old generation.  
-These regions can span from 1MB to 32MB in size depending on your total Java heap size.  
+These regions can span from 1MB to 32MB in size depending on your total Java heap size. Adjust with `-XX:G1RegionSize`.  
 The goal is to have around 2048 regions for the total heap.  
 Once a region frees up, it goes back to the "free" regions list. The principle of G1 GC is to reclaim the Java heap as much as possible (while trying its best to meet the pause time goal) by collecting the regions with the least amount of live data i.e. the ones with most garbage, first; hence the name Garbage First.
+
+the G1 GC algorithm does utilize some of HotSpot’s basic concepts. For example, the concepts of allocation, copying to survivor space and promotion to old generation are similar to previous HotSpot GC implementations.  
+Eden regions and survivor regions still make up the young generation. Most allocations happen in eden except for “humongous” allocations. (Note: For G1 GC, objects that span more than half a region size are considered “Humongous objects” and are directly allocated into “humongous” regions out of the old generation.)  
+G1 GC selects an adaptive young generation size based on your pause time goal. The young generation can range anywhere from the preset min to the preset max sizes, that are a function of the Java heap size. When eden reaches capacity, a “young garbage collection”, also known as an “evacuation pause”, will occur. This is a STW pause that copies (evacuates) the live objects from the regions that make up the eden, to the 'to-space' survivor regions.
+
+Pay attention if we have large enough object in out app. The humongous objects never move, not even during a Full GC. This can cause premature slow Full GCs or unexpected out-of-memory conditions with lots of free space left due to fragmentation of the region space.
 
 G1 collector step by step  
 1. Heap allocation (see image above).  
@@ -213,7 +219,6 @@ Phase | Description
 4. Remark (STW) | Completes the marking of live object in the heap. Uses an algorithm called snapshot-at-the-beginning (SATB)
 5. Cleanup (STW and concurrent) | Performs accounting on live objects and completely free regions (STW). Scrubs the Remembered Sets (STW). Reset the empty regions and return them to the free list (STW)
 *Copying (STW) | Evacuate or copy live objects to new unused regions.
-
 
 G1 footprint have larger JVM process size than Parallel or CMS. This is largely related to "accounting" data structures such as _Remembered Sets_ and _Collection Sets_.
 
