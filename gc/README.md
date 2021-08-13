@@ -197,7 +197,7 @@ the G1 GC algorithm does utilize some of HotSpot’s basic concepts. For example
 Eden regions and survivor regions still make up the young generation. Most allocations happen in eden except for “humongous” allocations. (Note: For G1 GC, objects that span more than half a region size are considered “Humongous objects” and are directly allocated into “humongous” regions out of the old generation.)  
 G1 GC selects an adaptive young generation size based on your pause time goal. The young generation can range anywhere from the preset min to the preset max sizes, that are a function of the Java heap size. When eden reaches capacity, a “young garbage collection”, also known as an “evacuation pause”, will occur. This is a STW pause that copies (evacuates) the live objects from the regions that make up the eden, to the 'to-space' survivor regions.
 
-Pay attention if we have large enough object in out app. The humongous objects never move, not even during a Full GC. This can cause premature slow Full GCs or unexpected out-of-memory conditions with lots of free space left due to fragmentation of the region space.
+Pay attention if we have large enough object in our app. The humongous objects never move, not even during a Full GC. This can cause premature slow Full GCs or unexpected out-of-memory conditions with lots of free space left due to fragmentation of the region space.
 
 G1 collector step by step  
 1. Heap allocation (see image above).  
