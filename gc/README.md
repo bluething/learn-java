@@ -124,7 +124,34 @@ Classes may get collected (unloaded) if the JVM finds they are no longer needed 
 
 #### Serial Garbage Collector
 
+The serial collector uses a single thread to perform all garbage collection work, which makes it relatively efficient because there is no communication overhead between threads.  
+The amount of data structures the footprint required for this Garbage collector to run is very minimal.  
+It's best-suited to single processor machines because it can't take advantage of multiprocessor hardware, although it can be useful on multiprocessors for applications with small data sets (up to approximately 100 MB).  
+The serial collector is selected by default on certain hardware and operating system configurations, or can be explicitly enabled with the option `-XX:+UseSerialGC`
+
 #### Parallel Garbage Collector
+
+It's like the serial collector, the primary difference is that multiple threads are used to speed up garbage collection.  
+The parallel collector is enabled with the command-line option `-XX:+UseParallelGC`. By default, with this option, both minor and major collections are executed in parallel to further reduce garbage collection overhead.
+
+It is named Parallel because it has multiple threads of the Garbage collection itself and all of those threads run parallel but when the Garbage collector is running all the threads are _stopped_ and if our application is deployed on a multicore or multiprocessor systems this collector will give us the greatest throughput.
+
+The number of garbage collector threads can be controlled with the command-line option `-XX:ParallelGCThreads=<N>`  
+On a machine with N hardware threads where N is greater than 8, the parallel collector uses approximately 5/8 for large values of N. At values of N below 8, the number used is N. On selected platforms, the fraction drops to 5/16.
+
+Because multiple garbage collector threads are participating in a minor collection, some fragmentation is possible due to promotions from the young generation to the tenured generation during the collection. Each garbage collection thread involved in a minor collection reserves a part of the tenured generation for promotions and the division of the available space into these "promotion buffers" can cause a fragmentation effect.  
+Reducing the number of garbage collector threads and increasing the size of the tenured generation will reduce this fragmentation effect.
+
+Customizable setting  
+1. Maximum Garbage Collection Pause Time  
+The maximum pause time goal is specified with the command-line option `-XX:MaxGCPauseMillis=<N>`. This is interpreted as a hint that pause times of <N> milliseconds or less are desired; by default, there is no maximum pause time goal. If a pause time goal is specified, the heap size and other parameters related to garbage collection are adjusted in an attempt to keep garbage collection pauses shorter than the specified value. These adjustments may cause the garbage collector to reduce the overall throughput of the application, and the desired pause time goal cannot always be met.  
+2. Throughput  
+The throughput goal is measured in terms of the time spent doing garbage collection versus the time spent outside of garbage collection (referred to as application time). The goal is specified by the command-line option `-XX:GCTimeRatio=<N>`  
+3. Footprint  
+Maximum heap footprint is specified using the option `-Xmx<N>`
+
+The downside to the parallel collector is that it will stop application threads when performing either a minor or full GC collection.  
+The parallel collector is best suited for apps that can tolerate application pauses and are trying to optimize for lower CPU overhead caused by the collector, for example batch applications.
 
 #### Concurrent Mark Sweep (CMS) Garbage Collector
 
