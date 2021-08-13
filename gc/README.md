@@ -46,7 +46,13 @@ No more memory fragmentation issue, but we only utilize half of memory. The cost
 2. Moves all living objects to one end.   
 3. Reclaims the memory space beyond the end boundary.
 
-Less efficient than Copying algorithm because there are more changes to the memory and needs to sort out the reference addresses of all living objects
+Less efficient than Copying algorithm because there are more changes to the memory and needs to sort out the reference addresses of all living objects.
+
+##### GC pause time
+
+The Java program expects to find an object at a particular address. If the garbage collector moves the object, the Java program needs to know the new location.  
+The easiest way to do this is to stop all the Java threads, compact all the objects, update all the references to the old addresses to now point to the new addresses, and resume the Java program.  
+However, this approach can lead to long periods (called GC pause times) when the Java threads aren't running.
 
 #### Generational Collection Algorithm
 
@@ -150,23 +156,95 @@ The throughput goal is measured in terms of the time spent doing garbage collect
 3. Footprint  
 Maximum heap footprint is specified using the option `-Xmx<N>`
 
+Unless the initial and maximum heap sizes are specified on the command line, they're calculated based on the amount of memory on the machine.  
+The default maximum heap size is 1/4 of the physical memory while the initial heap size is 1/64th of physical memory.  
+The maximum amount of space allocated to the young generation is one third of the total heap size.
+
 The downside to the parallel collector is that it will stop application threads when performing either a minor or full GC collection.  
 The parallel collector is best suited for apps that can tolerate application pauses and are trying to optimize for lower CPU overhead caused by the collector, for example batch applications.
 
 #### Concurrent Mark Sweep (CMS) Garbage Collector
 
+This algorithm uses multiple threads ("concurrent") to scan through the heap ("mark") for unused objects that can be recycled ("sweep").  
+This algorithm will enter "stop the world" (STW) mode in two cases:  
+1. When initializing the initial marking of roots (objects in the old generation that are reachable from thread entry points or static variables).  
+2. When the application has changed the state of the heap while the algorithm was running concurrently, forcing it to go back and do some final touches to make sure it has the right objects marked.
+
+The biggest concern when using this collector is  
+1. Encountering _promotion failures_ which are instances where a race condition occurs between collecting the young and old generations.  
+2. It uses more CPU in order to provide the application with higher levels of continuous throughput, by using multiple threads to perform scanning and collection.
+
+Use `XX:+USeParNewGC` to enable this gc.
+
 #### Garbage-First (G1) Garbage Collector
+
+G1 is a generational, incremental, parallel, mostly concurrent, stop-the-world, and evacuating garbage collector which monitors pause-time goals in each of the stop-the-world pauses.  
+Space-reclamation efforts concentrate on the young generation where it is most efficient to do so, with occasional space-reclamation.  
+G1 reclaims space mostly by using evacuation: live objects found within selected memory areas to collect are copied into new memory areas, compacting them in the process. After an evacuation has been completed, the space previously occupied by live objects is reused for allocation by the application.
+
+Some operations are always performed in stop-the-world pauses to improve throughput. Other operations that would take more time with the application stopped such as whole-heap operations like global marking are performed in parallel and concurrently with the application.  
+To keep stop-the-world pauses short for space-reclamation, G1 performs space-reclamation incrementally in steps and in parallel.  
+G1 achieves `predictability` by tracking information about previous application behavior and garbage collection pauses to build a model of the associated costs. It uses this information to size the work done in the pauses.
+
+![g1 heap layout](https://github.com/bluething/learnjava/blob/main/images/g1heap.PNG?raw=true)  
+In G1 GC, HotSpot introduces the concept of "regions". A single large contiguous Java heap space divides into multiple fixed-sized heap regions. Neither the young nor the old generation has to be contiguous.   
+A list of "free" regions maintains these regions. As the need arises, the free regions are assigned to either the young or the old generation.  
+These regions can span from 1MB to 32MB in size depending on your total Java heap size.  
+The goal is to have around 2048 regions for the total heap.  
+Once a region frees up, it goes back to the "free" regions list. The principle of G1 GC is to reclaim the Java heap as much as possible (while trying its best to meet the pause time goal) by collecting the regions with the least amount of live data i.e. the ones with most garbage, first; hence the name Garbage First.
+
+G1 collector step by step  
+1. Heap allocation (see image above).  
+2. Live objects are evacuated (i.e., copied or moved) to one or more survivor regions.  
+   - If the aging threshold is met, some of the objects are promoted to old generation regions.  
+   - This is a stop the world (STW) pause.  
+   - Eden size and survivor size is calculated for the next young GC.  
+   - Accounting information is kept to help calculate the size.  
+   - Things like the pause time goal are taken into consideration.
+3. Live objects have been evacuated to survivor regions or to old generation regions.
+
+G1 collection phases on old generation
+
+Phase | Description
+----- | ----------- 
+Initial Mark (STW) | Mark survivor regions (root regions) which may have references to objects in old generation.
+Root Region Scanning | Scan survivor regions for references into the old generation. This happens while the application continues to run. The phase must be completed before a young GC can occur.
+Concurrent Marking | Find live objects over the entire heap. This happens while the application is running. This phase can be interrupted by young generation garbage collections.
+Remark (STW) | Completes the marking of live object in the heap. Uses an algorithm called snapshot-at-the-beginning (SATB)
+Cleanup (STW and concurrent) | Performs accounting on live objects and completely free regions (STW). Scrubs the Remembered Sets (STW). Reset the empty regions and return them to the free list (STW)
+*Copying (STW) | Evacuate or copy live objects to new unused regions.
+
+
+G1 footprint have larger JVM process size than Parallel or CMS. This is largely related to "accounting" data structures such as _Remembered Sets_ and _Collection Sets_.
+
+Use cases for G1 is when we have requirement of large heaps with limited GC latency.
+
+When we must move from Parallel or CMS to G1?  
+- Full GC durations are too long or too frequent.  
+- The rate of object allocation rate or promotion varies significantly.  
+- Undesired long garbage collection or compaction pauses (longer than 0.5 to 1 second)
 
 #### Z Garbage Collector
 
 #### Shenandoah Garbage Collector
 
+### Consideration when choosing GC
+
+1. Memory.  
+The amount of memory that is assigned to the program and this is called HEAP memory. Please don't confuse with footprint (amount of memory required by GC algorithm to run)  
+2. Throughput.  
+For example, if your throughput is 99% that means 99% of the time the code was running and 1% of the time the Garbage collection was running.  
+3. Latency.  
+Latency is whenever the Garbage collection runs, how much amount of time our program stops for the Garbage collection to run properly.
+
 ### Reference
 
 [How Does Garbage Collection Work in Java?](https://www.alibabacloud.com/blog/how-does-garbage-collection-work-in-java_595387)  
 [Java Garbage Collection Basics](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)  
+[Garbage Collectors – Serial vs. Parallel vs. CMS vs. G1 (and what’s new in Java 8)](https://www.overops.com/blog/garbage-collectors-serial-vs-parallel-vs-cms-vs-the-g1-and-whats-new-in-java-8/)  
 [Serial Collector](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#GUID-45794DA6-AB96-4856-A96D-FDE5F7DEE498)  
 [6 The Parallel Collector](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html)  
+[8 Concurrent Mark Sweep (CMS) Collector](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/cms.html)  
 [Getting Started with the G1 Garbage Collector](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)  
 [Garbage-First Garbage Collector](https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573)  
 [G1: One Garbage Collector To Rule Them All](https://www.infoq.com/articles/G1-One-Garbage-Collector-To-Rule-Them-All/)
