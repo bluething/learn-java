@@ -17,6 +17,6 @@ public class LeakingAction implements Runnable {
     public void run() {
         final String value = threadLocalValue.get();
         System.out.println(value.length());
-        threadLocalValue.remove();
+        //threadLocalValue.remove();
     }
 }
