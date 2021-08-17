@@ -54,3 +54,32 @@ ThreadLocals will be cleaned up automatically when the thread exits, but if you 
 ### How to play simulatethreadlocalmemoryleak module
 
 See [simulatethreadlocalmemoryleak module how to play](https://github.com/bluething/learnjava/tree/main/heapdump/simulatethreadlocalmemoryleak)
+
+### Off heap
+
+Heap memory  
+1. Managed by the JVM/GC  
+2. Arena allocated region  
+3. Java Objects allocated here
+
+Off heap memory  
+1. Managed manually  
+2. Individually allocated buffer  
+3. Custom data stores
+
+Type of off heap memory  
+1. Native code  
+JNI invoked native code  
+2. Native buffer  
+Off heap buffer allocated by Java code (`ByteBuffer`)  
+3. Memory mapped files  
+Used for interprocess communications
+
+The problem is off heap storage won't appear as retained heap.  
+Tools that we can use to help us  
+1. `top -p<pid>`  
+Identified memory used per process  
+2. `-XX:MaxDirectMemorySize=1g`  
+Enforce buffer allocation limit. Stop unbounded growth. We still need to find leaks
+
+VisualVM have _Buffer Monitor_ plugin to monitor direct buffer created by `ByteBuffer`
