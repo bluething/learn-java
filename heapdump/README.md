@@ -83,3 +83,5 @@ Identified memory used per process
 Enforce buffer allocation limit. Stop unbounded growth. We still need to find leaks
 
 VisualVM have _Buffer Monitor_ plugin to monitor direct buffer created by `ByteBuffer`
+
+See [How to play simulateoffheapmemoryleak module](https://github.com/bluething/learnjava/tree/main/heapdump/simulateoffheapmemoryleak)
