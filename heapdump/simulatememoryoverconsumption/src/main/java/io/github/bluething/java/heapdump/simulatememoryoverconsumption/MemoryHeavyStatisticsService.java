@@ -32,20 +32,8 @@ public class MemoryHeavyStatisticsService extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final ServletInputStream inputStream = req.getInputStream();
-        final CSVReader csvReader = new CSVReader(new InputStreamReader(inputStream));
-        final Iterator<String[]> iterator = csvReader.iterator();
-        iterator.next();
-
-        final List<Integer> salesVolumes = new ArrayList<>();
-        while (iterator.hasNext())
-        {
-            final String[] row = iterator.next();
-            final String salesVolumeCell = row[SALES_VOLUME_COL];
-            final int salesVolume = salesVolumeCell.isEmpty() ? 0 : Integer.parseInt(salesVolumeCell);
-            salesVolumes.add(salesVolume);
-        }
-
+        final List<String> lines = readLines(req);
+        final List<Integer> salesVolumes = parseSalesVolumes(lines);
         final double mean = mean(salesVolumes);
         printResponse(resp, mean);
     }
