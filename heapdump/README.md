@@ -85,3 +85,68 @@ Enforce buffer allocation limit. Stop unbounded growth. We still need to find le
 VisualVM have _Buffer Monitor_ plugin to monitor direct buffer created by `ByteBuffer`
 
 See [How to play simulateoffheapmemoryleak module](https://github.com/bluething/learnjava/tree/main/heapdump/simulateoffheapmemoryleak)
+
+### java.lang.OutOfMemoryError: heap space
+
+#### What causes Out of Memory Error?
+
+1. Memory leak.  
+Memory leak that occurs for a long time will cause memory to run out.
+2. Memory overconsumption.  
+Using too much memory to perform a given task. We have `-Xmx` to limit maximum memory that can be used.
+
+#### Differences between memory leak and memory consumption
+
+1. Memory leak.  
+It grows with activity over time.  
+Don't free what allocated.
+2. Memory overconsumption.  
+It grows with currently active work.  
+Simply using too much memory.
+
+Usually we make a mistake when we try to optimize to reduce memory consumption when we actually have memory leak problem. Or vice versa.
+
+#### How to solve
+
+1. Identify what's using your memory.  
+2. Reduce memory consumption.  
+Allocate less, don't reference too much.  
+3. Measure again to validate.
+
+_Measure what's using your memory first before changing any code!_
+
+#### What we can do to reduce memory allocation?
+
+1. Use primitive data types.  
+2. Recalculate instead of storing.  
+Cache take memory.  Think small, not just memcache, also using fields, small collections.  
+3. Simplify domain model.  
+Abstraction == overhead, every layer uses memory.   
+Complexity === overhead, is our domain complex?  
+Pragmatism, refactor when it helps your code.  
+4. Increase available memory.  
+Configured max heap and have enough ram for the jvm 
+5. Don't hold objects in memory that you don't need.
+
+#### Prevention is better than cure, how?
+
+Remember, premature optimization is the root of all evil. There's no need to optimize things that don't need to be optimized.
+
+##### Monitoring
+
+1. Memory consumption.  
+2. GC logs / JVisualVM.  
+3. Application performance monitoring.
+
+##### Performance testing
+
+##### Drive system with stress test
+
+##### Find and fix the problems
+
+##### Use 20% time for
+
+1. Research or pet projects.  
+2. Periodically use it for performance analysis/improvements.
+
+See [simulatememoryoverconsumption](https://github.com/bluething/learnjava/tree/main/heapdump/simulatememoryoverconsumption)
