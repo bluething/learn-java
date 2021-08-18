@@ -1,7 +1,6 @@
 package io.github.bluething.java.heapdump.simulatememoryoverconsumption;
 
 import com.opencsv.CSVParser;
-import com.opencsv.CSVReader;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHandler;
 
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
