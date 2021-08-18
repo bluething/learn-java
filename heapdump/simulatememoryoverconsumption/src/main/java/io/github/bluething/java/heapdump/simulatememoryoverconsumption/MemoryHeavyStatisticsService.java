@@ -1,5 +1,6 @@
 package io.github.bluething.java.heapdump.simulatememoryoverconsumption;
 
+import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHandler;
@@ -9,13 +10,11 @@ import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MemoryHeavyStatisticsService extends HttpServlet {
     private static final int SALES_VOLUME_COL = 9;
@@ -33,22 +32,31 @@ public class MemoryHeavyStatisticsService extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final ServletInputStream inputStream = req.getInputStream();
-        final CSVReader csvReader = new CSVReader(new InputStreamReader(inputStream));
-        final Iterator<String[]> iterator = csvReader.iterator();
-        iterator.next();
+        final List<String> lines = readLines(req);
+        final List<Integer> salesVolumes = parseSalesVolumes(lines);
+        final double mean = mean(salesVolumes);
+        printResponse(resp, mean);
+    }
 
+    private List<String> readLines(final HttpServletRequest req) throws IOException
+    {
+        final ServletInputStream inputStream = req.getInputStream();
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        return reader.lines().skip(1).collect(Collectors.toList());
+    }
+
+    private List<Integer> parseSalesVolumes(final List<String> lines) throws IOException
+    {
+        final CSVParser csvParser = new CSVParser();
         final List<Integer> salesVolumes = new ArrayList<>();
-        while (iterator.hasNext())
+        for (String line : lines)
         {
-            final String[] row = iterator.next();
+            final String[] row = csvParser.parseLine(line);
             final String salesVolumeCell = row[SALES_VOLUME_COL];
             final int salesVolume = salesVolumeCell.isEmpty() ? 0 : Integer.parseInt(salesVolumeCell);
             salesVolumes.add(salesVolume);
         }
-
-        final double mean = mean(salesVolumes);
-        printResponse(resp, mean);
+        return salesVolumes;
     }
 
     private double mean(List<Integer> salesVolumes) {
