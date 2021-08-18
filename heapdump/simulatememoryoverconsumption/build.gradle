@@ -15,9 +15,10 @@ compileJava {
 }
 
 dependencies {
-    implementation 'org.eclipse.jetty:jetty-server:11.0.6'
-    implementation 'org.eclipse.jetty:jetty-servlet:11.0.6'
-    implementation 'com.opencsv:opencsv:5.5.1'
+    implementation 'org.eclipse.jetty:jetty-server:9.2.13.v20150730'
+    implementation 'org.eclipse.jetty:jetty-servlet:9.2.13.v20150730'
+    implementation 'com.opencsv:opencsv:3.8'
+    implementation 'javax.servlet:javax.servlet-api:3.0.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
