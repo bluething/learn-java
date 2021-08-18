@@ -1,7 +1,7 @@
 ### How to play
 
 1. To get `java.lang.OutOfMemoryError` set `-Xmx` to appropriate value (below 64M).  
-2. Run the app.  
+2. Run the app (`MemoryHeavyStatisticsService`).  
 3. Run `run.sh` several times.
 
 ![heavy memory consumption](https://github.com/bluething/learnjava/blob/main/images/heavymemoryconsumption.jpg?raw=true)  
@@ -52,3 +52,5 @@ But this is not enough, because it might be that there was another piece of appl
 
 ![heap dump heavy memory consumption](https://github.com/bluething/learnjava/blob/main/images/heapdumpheavymemoryconcumption.png?raw=true)  
 From the heap dump we can see that a lot of object String inside the ArrayList. This is same with the readLines logic that read from file then save to memory.
+
+The solution is `MemoryLightStatisticsService.java`
