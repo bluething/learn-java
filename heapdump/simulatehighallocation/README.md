@@ -2,7 +2,7 @@
 
 We need:  
 1. Apache benchmark.  
-2. [Java mission control](https://github.com/openjdk/jmc)
+2. [Java mission control](https://github.com/openjdk/jmc) as an allocation profiling tool
 
 Run the app `HighAllocationStatisticsService`  
 Run the `bench.sh`
