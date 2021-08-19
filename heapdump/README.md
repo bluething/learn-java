@@ -150,3 +150,50 @@ Remember, premature optimization is the root of all evil. There's no need to opt
 2. Periodically use it for performance analysis/improvements.
 
 See [simulatememoryoverconsumption](https://github.com/bluething/learnjava/tree/main/heapdump/simulatememoryoverconsumption)
+
+### Object Allocation Rate Problems
+
+The problem caused by allocating objects too fast. The impact is performance of our application.
+
+#### Latency/responsiveness
+
+Latency is the delay before a response or a request is made. Too much allocation causes long gc pause (add latency).  
+Y% request take at most X ms at Z request per second.  
+How fast to keep users happy?
+
+#### Throughput/efficiency
+
+Throughput is the number of transactions processed per second in an application.  
+How many request per second does my application have to support at peak time?
+
+#### The myth
+
+~~Allocating objects is basically instant and free of costs~~
+
+If we allocate objects frequently enough compared to performing actual business logic, then we'll spend a lot of time in your application process and doing allocation, and not much time doing actual work.  
+The cost is cpu cache locality and time spent allocating.
+
+#### Cpu cache locality
+
+CPU evolution faster than memory, memory access slower than cpu cache access. If we allocate lots and lots of new objects into memory, we'll end up washing the cache and reduces its efficiency.  
+The cache usually LRU, they throw away the data that's not so useful.
+
+#### Time spent allocating
+
+Allocation in gc systems is very fast, but it's have a cost. Different garbage collectors have different costs.
+
+### GC
+
+#### Most object die young
+
+They're no longer referenced, fairly quickly after they get created.
+
+#### Split memory into generations
+
+Because mostly objects die at young age the rest of them promoted to old generation (if they survive a certain number of garbage collections).  
+Younger generations get collected more frequently and generally more efficiently.  
+It takes longer to collect all the generations, and these are often collected when we collect the whole of our memory space, called a full GC.  
+So, if we allocate a lot of objects (even though most of them die quickly) they will fill the old generation.  
+For G1 gc the main problem is if it can't keep up with your allocation rate, it has to kind of fall back and ends up doing a full GC, so a full stop the world pause to sort out the mess.
+
+See [simulatehighallocation](https://github.com/bluething/learnjava/tree/main/heapdump/simulatehighallocation)
