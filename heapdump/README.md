@@ -197,3 +197,9 @@ So, if we allocate a lot of objects (even though most of them die quickly) they 
 For G1 gc the main problem is if it can't keep up with your allocation rate, it has to kind of fall back and ends up doing a full GC, so a full stop the world pause to sort out the mess.
 
 See [simulatehighallocation](https://github.com/bluething/learnjava/tree/main/heapdump/simulatehighallocation)
+
+### The tools we use when dealing with memory problem
+
+1. Object histograms  
+2. Heap dumps  
+3. Allocation profiling
