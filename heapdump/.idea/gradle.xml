@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/klassified" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/klassified" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulateclassloadermemoryleak" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulateclassloadermemoryleak" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulatehighallocation" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulatehighallocation" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulatememoryoverconsumption" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulatememoryoverconsumption" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulateoffheapmemoryleak" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulateoffheapmemoryleak" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulatethreadlocalmemoryleak" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="gradleJvm" value="14" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulatethreadlocalmemoryleak" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
